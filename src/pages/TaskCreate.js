@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { createTask, uploadImage } from "../api";
 
-function Task() {
+function TaskCreate() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [steps, setSteps] = useState("");
@@ -86,4 +86,4 @@ function Task() {
   );
 }
 
-export default Task;
+export default TaskCreate;

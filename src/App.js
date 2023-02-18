@@ -9,7 +9,7 @@ import HomePage from "./pages/HomePage";
 import Login from "./pages/Login";
 import ProjectDetail from "./pages/ProjectDetail";
 import Signup from "./pages/Signup";
-import Task from "./pages/Task";
+import TaskCreate from "./pages/TaskCreate";
 import TaskDetail from "./pages/TaskDetail";
 
 function App() {
@@ -44,7 +44,7 @@ function App() {
         {/* <Route path="/projects/:projectId" element={<ProjectDetail />} /> */}
         <Route path="/tasks" element={<ListTask />} />
         <Route path="/tasks/:taskId" element={<TaskDetail />} />
-        <Route path="/tasks/create/:projectId" element={<Task />} />
+        <Route path="/tasks/create/:projectId" element={<TaskCreate />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
       </Routes>

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
+import { Link } from "react-router-dom";
 import { getTask, deleteTask } from "../api";
+import TaskCreate from "./TaskCreate";
 
 function TaskDetail() {
   const [task, setTask] = useState();
@@ -19,6 +21,11 @@ function TaskDetail() {
   async function handleDeleteTask() {
     await deleteTask(taskId);
     navigate("/dashboard");
+  }
+
+  function handleCreateTask() {
+
+    <Link to={`/tasks/${task._id}`}/>
   }
 
   return task ? (
@@ -42,6 +49,10 @@ function TaskDetail() {
         })}
       <p>Created on {task.creation}</p>
       <p>Deadline: {task.deadline}</p>
+      <div>
+        <button onClick={handleCreateTask}>Create a new Task</button>
+      </div>
+      <TaskCreate/>
       <div>
         <button onClick={handleDeleteTask}>Delete Project</button>
       </div>

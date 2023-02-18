@@ -31,7 +31,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/project" element={<ListProjects />}/>
+        <Route path="/project" element={<ListProjects />} />
         <Route path="/project/:projectId" element={<ProjectDetail />} />
         {/* <Route
           path="/projects/add"
@@ -44,6 +44,7 @@ function App() {
         {/* <Route path="/projects/:projectId" element={<ProjectDetail />} /> */}
         <Route path="/tasks" element={<ListTask />} />
         <Route path="/tasks/:taskId" element={<TaskDetail />} />
+        <Route path="/tasks/create/:projectId" element={<Task />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
       </Routes>

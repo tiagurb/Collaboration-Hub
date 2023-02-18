@@ -21,7 +21,7 @@ export const createProject = (project) => {
 };
 
 export const createTask = (task) => {
-  return axios.post(`${BASE_URL}/task/:projectId`, task);
+  return axios.post(`${BASE_URL}/tasks/create/:projectId`, task);
 };
 
 export const getAllTasks = () => {

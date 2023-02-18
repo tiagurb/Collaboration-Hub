@@ -2,6 +2,8 @@ import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "./App.css";
 import Navbar from "./components/Navbar";
+import Dashboard from "./pages/Dashboard";
+import HomePage from "./pages/HomePage";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
@@ -11,7 +13,8 @@ function App() {
       <ToastContainer />
       <Navbar />
       <Routes>
-        <Route path="/" />
+        <Route path="/" element={<HomePage/>}/>
+        <Route path="/dashboard" element={<Dashboard/>}/>
         <Route path="/projects" />
         {/* <Route
           path="/projects/add"

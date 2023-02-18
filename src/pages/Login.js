@@ -25,7 +25,7 @@ function Login() {
       localStorage.setItem("authToken", response.data);
       // Setting the loged user in the context
       authenticateUser();
-      toast.success("User logged in in");
+      toast.success("User logged in");
       navigate("/");
     } catch (e) {
       toast.error("Error occurred", e);

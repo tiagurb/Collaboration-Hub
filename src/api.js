@@ -20,6 +20,10 @@ export const createProject = (project) => {
   });
 };
 
+export const createTask = (task) => {
+  return axios.post(`${BASE_URL}/task/:projectId`, task);
+};
+
 export const uploadImage = (uploadData) => {
   return axios.post(`${BASE_URL}/upload`, uploadData);
 };

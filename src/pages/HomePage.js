@@ -1,7 +1,7 @@
 function HomePage() {
   return (
     <div>
-      <p>you are logged in!</p>
+      <h3>HOMEPAGE</h3>
     </div>
   );
 }

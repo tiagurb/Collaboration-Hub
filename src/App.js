@@ -11,11 +11,22 @@ import Task from "./pages/Task";
 function App() {
   return (
     <div className="App">
-      <ToastContainer />
+      <ToastContainer
+        // position="top-right"
+        // autoClose={5000}
+        // hideProgressBar={false}
+        // newestOnTop={false}
+        // closeOnClick
+        // rtl={false}
+        // pauseOnFocusLoss
+        // draggable
+        // pauseOnHover
+        // theme="dark"
+      />
       <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage/>}/>
-        <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/projects" />
         {/* <Route
           path="/projects/add"

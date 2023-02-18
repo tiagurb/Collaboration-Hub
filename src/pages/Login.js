@@ -42,7 +42,7 @@ function Login() {
         <input id="password" type="password" onChange={handlePasswordChange} />
 
         <button type="submit" onClick={handleSubmitForm}>
-          Log in
+          Login
         </button>
       </form>
       <p>Don't have an account?</p>

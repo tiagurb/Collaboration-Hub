@@ -16,7 +16,7 @@ export const deleteProject = (id) => {
 
 export const createProject = (project) => {
   return axios.post(`${BASE_URL}/project`, project, {
-    headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}`}
+    headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` },
   });
 };
 
@@ -34,7 +34,6 @@ export const signup = (user) => {
 
 export const verify = (token) => {
   return axios.get(`${BASE_URL}/verify`, {
-    headers: { Authorization: `Bearer ${token}`},
+    headers: { Authorization: `Bearer ${token}` },
   });
 };
-

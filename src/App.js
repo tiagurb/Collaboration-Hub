@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import HomePage from "./pages/HomePage";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Task from "./pages/Task";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           }
         /> */}
         {/* <Route path="/projects/:projectId" element={<ProjectDetail />} /> */}
+        <Route path="/task" element={<Task />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
       </Routes>

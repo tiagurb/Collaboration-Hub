@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = `${process.env.REACT_APP_PROJECTS_API}/`;
+const BASE_URL = `${process.env.REACT_APP_PROJECTS_API}`;
 
 export const getAllProjects = () => {
   return axios.get(`${BASE_URL}/project`);
@@ -32,7 +32,7 @@ export const signup = (user) => {
   return axios.post(`${BASE_URL}/signup`, user);
 };
 
-export const verify = (token) => {
+export const verify = (token = `${localStorage.getItem("authToken")}`) => {
   return axios.get(`${BASE_URL}/verify`, {
     headers: { Authorization: `Bearer ${token}` },
   });

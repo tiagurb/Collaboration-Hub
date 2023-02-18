@@ -44,7 +44,7 @@ export const signup = (user) => {
   return axios.post(`${BASE_URL}/signup`, user);
 };
 
-export const verify = (token) => {
+export const verify = (token = `${localStorage.getItem("authToken")}`) => {
   return axios.get(`${BASE_URL}/verify`, {
     headers: { Authorization: `Bearer ${token}` },
   });

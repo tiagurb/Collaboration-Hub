@@ -1,12 +1,16 @@
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "./App.css";
+import ListProjects from "./components/ListProjects";
+import ListTask from "./components/ListTask";
 import Navbar from "./components/Navbar";
 import Dashboard from "./pages/Dashboard";
 import HomePage from "./pages/HomePage";
 import Login from "./pages/Login";
+import ProjectDetail from "./pages/ProjectDetail";
 import Signup from "./pages/Signup";
 import Task from "./pages/Task";
+import TaskDetail from "./pages/TaskDetail";
 
 function App() {
   return (
@@ -27,7 +31,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/projects" />
+        <Route path="/project" element={<ListProjects />}/>
+        <Route path="/project/:projectId" element={<ProjectDetail />} />
         {/* <Route
           path="/projects/add"
           element={
@@ -37,7 +42,8 @@ function App() {
           }
         /> */}
         {/* <Route path="/projects/:projectId" element={<ProjectDetail />} /> */}
-        <Route path="/task" element={<Task />} />
+        <Route path="/tasks" element={<ListTask />} />
+        <Route path="/tasks/:taskId" element={<TaskDetail />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
       </Routes>

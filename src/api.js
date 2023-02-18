@@ -24,6 +24,18 @@ export const createTask = (task) => {
   return axios.post(`${BASE_URL}/task/:projectId`, task);
 };
 
+export const getAllTasks = () => {
+  return axios.get(`${BASE_URL}/tasks`);
+};
+
+export const getTask = (id) => {
+  return axios.get(`${BASE_URL}/tasks/${id}`);
+};
+
+export const deleteTask = (id) => {
+  return axios.delete(`${BASE_URL}/tasks/${id}`);
+};
+
 export const uploadImage = (uploadData) => {
   return axios.post(`${BASE_URL}/upload`, uploadData);
 };

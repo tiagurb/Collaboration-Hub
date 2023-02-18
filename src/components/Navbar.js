@@ -12,9 +12,7 @@ function Navbar() {
           {loggedUser ? (
             <div>
               <p>Welcome {loggedUser.username}</p>
-              <div>
-                <NavLink to="/projects">Projects</NavLink>
-              </div>
+              <div><NavLink to="/dashboard">Dashboard</NavLink></div>
               <button onClick={logout}>Logout</button>
             </div>
           ) : (

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = `${process.env.REACT_APP_PROJECTS_API}/`;
+const BASE_URL = `${process.env.REACT_APP_PROJECTS_API}`;
 
 export const getAllProjects = () => {
   return axios.get(`${BASE_URL}/project`);
@@ -18,6 +18,18 @@ export const createProject = (project) => {
   return axios.post(`${BASE_URL}/project`, project, {
     headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` },
   });
+};
+
+export const getAllTasks = () => {
+  return axios.get(`${BASE_URL}/tasks`);
+};
+
+export const getTask = (id) => {
+  return axios.get(`${BASE_URL}/tasks/${id}`);
+};
+
+export const deleteTask = (id) => {
+  return axios.delete(`${BASE_URL}/tasks/${id}`);
 };
 
 export const uploadImage = (uploadData) => {

@@ -1,12 +1,18 @@
 import ListProjects from "../components/ListProjects";
+import { useNavigate } from "react-router";
 
-function Dashboard () {
+function Dashboard() {
+  const navigate = useNavigate();
 
-    return (
-        <>
-           <ListProjects/> 
-        </>
-    )
+  function handleCreateNewProject() {
+    navigate("/project/create");
+  }
+  return (
+    <>
+      <ListProjects />
+      <button onClick={handleCreateNewProject}>Create New Project</button>
+    </>
+  );
 }
 
 export default Dashboard;

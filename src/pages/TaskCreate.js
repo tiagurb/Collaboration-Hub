@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { createTask, uploadImage } from "../api";
 
@@ -7,8 +7,9 @@ function TaskCreate() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [steps, setSteps] = useState("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState(null);
   const [deadline, setDeadline] = useState(0);
+  const { projectId } = useParams();
 
   const navigate = useNavigate();
 
@@ -40,18 +41,24 @@ function TaskCreate() {
 
     const uploadData = new FormData();
     uploadData.append("filename", image);
-    const response = await uploadImage(uploadData);
-    console.log("response from the backend with image url", response.data);
+    console.log();
+    let response = null;
+    if (uploadData["filename"]) {
+      response = await uploadImage(uploadData);
+    }
 
     //2. Once we get the image Url -> create a project
     //with title, description and imageUrl
-    await createTask({
-      title,
-      description,
-      steps,
-      deadline,
-      imageUrl: response.data.fileUrl,
-    });
+    await createTask(
+      {
+        title,
+        description,
+        steps,
+        deadline,
+        imageUrl: response ? response.data.fileUrl : "",
+      },
+      projectId
+    );
 
     toast.success("Task created");
     navigate("/");
@@ -76,6 +83,7 @@ function TaskCreate() {
           name="filename"
           type="file"
           onChange={handleImageChange}
+          value={image}
         />
         <label htmlFor="deadline">Deadline</label>
         <input id="deadline" type="date" onChange={handleDeadlineChange} />

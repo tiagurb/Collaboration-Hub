@@ -28,8 +28,21 @@ function ProjectDetail() {
 
   return project ? (
     <>
-      {console.log(project.title)}
-      <h3>{project.title}</h3>
+      <h1>{project.title}</h1>
+
+      <div>
+        <h2>To Do</h2>
+        {/* {if (stau)} */}
+      </div>
+        
+      <div>
+        <h2>Doing</h2>
+      </div>
+      
+      <div>
+        <h2>Complete</h2>
+      </div>
+      
       {project.tasks.map((task) => {
         return (
           <div key={task._id}>

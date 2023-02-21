@@ -30,10 +30,10 @@ export const getTask = (id) => {
 
 export const updateTask = (id) => {
   return axios.put(`${BASE_URL}/tasks/${id}`);
-}
+};
 
-export const createTask = (task) => {
-  return axios.post(`${BASE_URL}/tasks/create/:projectId`, task);
+export const createTask = (task, projectId) => {
+  return axios.post(`${BASE_URL}/tasks/create/${projectId}`, task);
 };
 
 export const deleteTask = (id) => {
@@ -41,7 +41,7 @@ export const deleteTask = (id) => {
 };
 
 export const uploadImage = (uploadData) => {
-  return axios.post(`${BASE_URL}/upload`, uploadData);
+  return uploadData ? axios.post(`${BASE_URL}/upload`, uploadData) : null;
 };
 
 export const login = (user) => {

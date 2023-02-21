@@ -25,24 +25,26 @@ function ProjectDetail() {
   }
 
   function handleCreateTask() {
-    <Link to={`/tasks/create/${project._id}`}/>
+    navigate(`/tasks/create/${project._id}`);
   }
 
   return project ? (
     <>
       {console.log(project.title)}
       <h3>{project.title}</h3>
-      {project.tasks.map((task) => { 
-          return (
-            <div key={task._id}>
-              <div><Link to={`/tasks/${task._id}`}>{task.title}</Link></div>
+      {project.tasks.map((task) => {
+        return (
+          <div key={task._id}>
+            <div>
+              <Link to={`/tasks/${task._id}`}>{task.title}</Link>
             </div>
-          );
-        })}
-        <div>
+          </div>
+        );
+      })}
+      <div>
         <button onClick={handleCreateTask}>Create a new Task</button>
       </div>
-        {/* <TaskCreate/> */}
+      {/* <TaskCreate/> */}
       <div>
         <button onClick={handleDeleteProject}>Delete Project</button>
       </div>

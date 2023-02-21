@@ -25,7 +25,11 @@ function ProjectDetail() {
   }
 
   function handleCreateTask() {
+<<<<<<< HEAD
     <Link to={`/tasks/create/${project._id}`} />;
+=======
+    navigate(`/tasks/create/${project._id}`);
+>>>>>>> cfb595da6ef6acbc616aa19c9757b99e42a8d056
   }
 
   return project ? (

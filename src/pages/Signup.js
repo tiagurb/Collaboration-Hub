@@ -30,7 +30,7 @@ function Signup() {
       } else {
         toast.success("User created");
       }
-      navigate("/");
+      navigate("/login");
     } catch (e) {
       toast.error("Error occurred", e);
     }

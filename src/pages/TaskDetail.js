@@ -23,10 +23,6 @@ function TaskDetail() {
     navigate("/dashboard");
   }
 
-  function handleCreateTask() {
-
-    <Link to={`/tasks/${task._id}`}/>
-  }
 
   return task ? (
     <>
@@ -49,10 +45,6 @@ function TaskDetail() {
         })}
       <p>Created on {task.creation}</p>
       <p>Deadline: {task.deadline}</p>
-      <div>
-        <button onClick={handleCreateTask}>Create a new Task</button>
-      </div>
-      <TaskCreate/>
       <div>
         <button onClick={handleDeleteTask}>Delete Project</button>
       </div>

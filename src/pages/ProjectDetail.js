@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { deleteProject, getProject } from "../api";
+import TaskCreate from "./TaskCreate";
 
 function ProjectDetail() {
   const [project, setProject] = useState();
+  const [task, setTask] = useState();
   const { projectId } = useParams();
   const navigate = useNavigate();
 
@@ -22,6 +24,10 @@ function ProjectDetail() {
     navigate("/dashboard");
   }
 
+  function handleCreateTask() {
+    <Link to={`/tasks/create/${project._id}`}/>
+  }
+
   return project ? (
     <>
       {console.log(project.title)}
@@ -33,6 +39,10 @@ function ProjectDetail() {
             </div>
           );
         })}
+        <div>
+        <button onClick={handleCreateTask}>Create a new Task</button>
+      </div>
+        {/* <TaskCreate/> */}
       <div>
         <button onClick={handleDeleteProject}>Delete Project</button>
       </div>

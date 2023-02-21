@@ -26,7 +26,7 @@ function Login() {
       // Setting the loged user in the context
       authenticateUser();
       toast.success("User logged in");
-      navigate("/");
+      navigate("/dashboard");
     } catch (e) {
       toast.error("Error occurred", e);
     }

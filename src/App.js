@@ -12,6 +12,7 @@ import ProjectDetail from "./pages/ProjectDetail";
 import Signup from "./pages/Signup";
 import TaskCreate from "./pages/TaskCreate";
 import TaskDetail from "./pages/TaskDetail";
+import TaskUpdate from "./pages/TaskUpdate";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
         {/* <Route path="/projects/:projectId" element={<ProjectDetail />} /> */}
         <Route path="/tasks" element={<ListTask />} />
         <Route path="/tasks/:taskId" element={<TaskDetail />} />
+        <Route path="/tasks/update/:taskId" element={<TaskUpdate />} />
         <Route path="/tasks/create/:projectId" element={<TaskCreate />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />

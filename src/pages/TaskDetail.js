@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import { Link } from "react-router-dom";
 import { getTask, deleteTask } from "../api";
 import TaskCreate from "./TaskCreate";
 
@@ -23,6 +22,9 @@ function TaskDetail() {
     navigate("/dashboard");
   }
 
+  function handleUpdateTask () {
+    navigate(`/tasks/update/${task._id}`)
+  }
 
   return task ? (
     <>
@@ -46,7 +48,8 @@ function TaskDetail() {
       <p>Created on {task.creation}</p>
       <p>Deadline: {task.deadline}</p>
       <div>
-        <button onClick={handleDeleteTask}>Delete Project</button>
+        <button onClick={handleUpdateTask}>Update Task</button>
+        <button onClick={handleDeleteTask}>Delete Task</button>
       </div>
     </>
   ) : (

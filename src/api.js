@@ -20,16 +20,20 @@ export const createProject = (project) => {
   });
 };
 
-export const createTask = (task) => {
-  return axios.post(`${BASE_URL}/tasks/create/:projectId`, task);
-};
-
 export const getAllTasks = () => {
   return axios.get(`${BASE_URL}/tasks`);
 };
 
 export const getTask = (id) => {
   return axios.get(`${BASE_URL}/tasks/${id}`);
+};
+
+export const updateTask = (id) => {
+  return axios.put(`${BASE_URL}/tasks/${id}`);
+}
+
+export const createTask = (task) => {
+  return axios.post(`${BASE_URL}/tasks/create/:projectId`, task);
 };
 
 export const deleteTask = (id) => {

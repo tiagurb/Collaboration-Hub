@@ -2,11 +2,9 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { deleteProject, getProject } from "../api";
-import TaskCreate from "./TaskCreate";
 
 function ProjectDetail() {
   const [project, setProject] = useState();
-  const [task, setTask] = useState();
   const { projectId } = useParams();
   const navigate = useNavigate();
 

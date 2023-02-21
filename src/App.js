@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Dashboard from "./pages/Dashboard";
 import HomePage from "./pages/HomePage";
 import Login from "./pages/Login";
+import ProjectCreate from "./pages/ProjectCreate";
 import ProjectDetail from "./pages/ProjectDetail";
 import Signup from "./pages/Signup";
 import TaskCreate from "./pages/TaskCreate";
@@ -33,6 +34,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/project" element={<ListProjects />} />
+        <Route path="/project/create" element={<ProjectCreate />} />
         <Route path="/project/:projectId" element={<ProjectDetail />} />
         {/* <Route
           path="/projects/add"

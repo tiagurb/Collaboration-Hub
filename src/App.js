@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
 import ListProjects from "./components/ListProjects";
 import ListTask from "./components/ListTask";
 import Navbar from "./components/Navbar";

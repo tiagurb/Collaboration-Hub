@@ -158,10 +158,10 @@ function ProjectDetail() {
         </div>
       </div>
       <div>
-        <button onClick={handleCreateTask}>Create a new Task</button>
+        <Button onClick={handleCreateTask}>Create a new Task</Button>
       </div>
       <div>
-        <button onClick={handleDeleteProject}>Delete Project</button>
+        <Button onClick={handleDeleteProject}>Delete Project</Button>
       </div>
     </>
   ) : (

@@ -11,7 +11,14 @@ import {
   ButtonGroup,
 } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/image";
-import { Divider, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/layout";
+import {
+  Divider,
+  Heading,
+  Highlight,
+  SimpleGrid,
+  Stack,
+  Text,
+} from "@chakra-ui/layout";
 
 function ProjectDetail() {
   const [project, setProject] = useState(null);
@@ -39,10 +46,19 @@ function ProjectDetail() {
 
   return project ? (
     <>
-      <Heading as='h1' size='4xl' noOfLines={1}>{project.title}</Heading>
+      <Heading size="lg" fontSize="50px">
+        {project.title}
+      </Heading>
       <div className="taskState">
         <div>
-          <Heading mb="10" as='h2' size='2xl'>To Do</Heading>
+          <Heading lineHeight="tall">
+            <Highlight
+              query="To Do"
+              styles={{ px: "2", py: "1", rounded: "full", bg: "red.100" }}
+            >
+              To Do
+            </Highlight>
+          </Heading>
           <SimpleGrid
             spacing={4}
             templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
@@ -55,11 +71,13 @@ function ProjectDetail() {
                       <Heading size="md"> {task.title} </Heading>
                     </CardHeader>
                     <CardBody>
-                      <Text>Deadline: {task.deadline}</Text>
+                      <Text>
+                        Deadline: {new Date(task.deadline).toLocaleDateString()}
+                      </Text>
                     </CardBody>
                     <CardFooter>
                       <Button>
-                          <Link to={`/tasks/${task._id}`}>See Details</Link>
+                        <Link to={`/tasks/${task._id}`}>See Details</Link>
                       </Button>
                     </CardFooter>
                   </Card>
@@ -70,7 +88,14 @@ function ProjectDetail() {
         </div>
 
         <div>
-          <Heading mb="10" as='h2' size='2xl'>Doing</Heading>
+          <Heading lineHeight="tall">
+            <Highlight
+              query="Working"
+              styles={{ px: "2", py: "1", rounded: "full", bg: "red.100" }}
+            >
+              Working
+            </Highlight>
+          </Heading>
           <SimpleGrid
             spacing={4}
             templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
@@ -83,11 +108,11 @@ function ProjectDetail() {
                       <Heading size="md"> {task.title} </Heading>
                     </CardHeader>
                     <CardBody>
-                      <Text>Deadline: {task.deadline}</Text>
+                      <Text>Deadline: {new Date(task.deadline).toLocaleDateString()}</Text>
                     </CardBody>
                     <CardFooter>
                       <Button>
-                          <Link to={`/tasks/${task._id}`}>See Details</Link>
+                        <Link to={`/tasks/${task._id}`}>See Details</Link>
                       </Button>
                     </CardFooter>
                   </Card>
@@ -98,7 +123,14 @@ function ProjectDetail() {
         </div>
 
         <div>
-          <Heading mb="10" as='h2' size='2xl'>Complete</Heading>
+          <Heading lineHeight="tall">
+            <Highlight
+              query="Complete"
+              styles={{ px: "2", py: "1", rounded: "full", bg: "red.100" }}
+            >
+              Complete
+            </Highlight>
+          </Heading>
           <SimpleGrid
             spacing={4}
             templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
@@ -111,11 +143,11 @@ function ProjectDetail() {
                       <Heading size="md"> {task.title} </Heading>
                     </CardHeader>
                     <CardBody>
-                      <Text>Deadline: {task.deadline}</Text>
+                      <Text>Deadline: {new Date(task.deadline).toLocaleDateString()}</Text>
                     </CardBody>
                     <CardFooter>
                       <Button>
-                          <Link to={`/tasks/${task._id}`}>See Details</Link>
+                        <Link to={`/tasks/${task._id}`}>See Details</Link>
                       </Button>
                     </CardFooter>
                   </Card>

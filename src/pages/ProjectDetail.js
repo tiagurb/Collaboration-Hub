@@ -39,10 +39,14 @@ function ProjectDetail() {
 
   return project ? (
     <>
-      <Heading as='h1' size='4xl' noOfLines={1}>{project.title}</Heading>
+      <Heading as="h1" size="4xl" noOfLines={1}>
+        {project.title}
+      </Heading>
       <div className="taskState">
         <div>
-          <Heading mb="10" as='h2' size='2xl'>To Do</Heading>
+          <Heading mb="10" as="h2" size="2xl">
+            To Do
+          </Heading>
           <SimpleGrid
             spacing={4}
             templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
@@ -59,7 +63,7 @@ function ProjectDetail() {
                     </CardBody>
                     <CardFooter>
                       <Button>
-                          <Link to={`/tasks/${task._id}`}>See Details</Link>
+                        <Link to={`/tasks/${task._id}`}>See Details</Link>
                       </Button>
                     </CardFooter>
                   </Card>
@@ -70,7 +74,9 @@ function ProjectDetail() {
         </div>
 
         <div>
-          <Heading mb="10" as='h2' size='2xl'>Doing</Heading>
+          <Heading mb="10" as="h2" size="2xl">
+            Doing
+          </Heading>
           <SimpleGrid
             spacing={4}
             templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
@@ -87,7 +93,7 @@ function ProjectDetail() {
                     </CardBody>
                     <CardFooter>
                       <Button>
-                          <Link to={`/tasks/${task._id}`}>See Details</Link>
+                        <Link to={`/tasks/${task._id}`}>See Details</Link>
                       </Button>
                     </CardFooter>
                   </Card>
@@ -98,7 +104,9 @@ function ProjectDetail() {
         </div>
 
         <div>
-          <Heading mb="10" as='h2' size='2xl'>Complete</Heading>
+          <Heading mb="10" as="h2" size="2xl">
+            Complete
+          </Heading>
           <SimpleGrid
             spacing={4}
             templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
@@ -115,7 +123,7 @@ function ProjectDetail() {
                     </CardBody>
                     <CardFooter>
                       <Button>
-                          <Link to={`/tasks/${task._id}`}>See Details</Link>
+                        <Link to={`/tasks/${task._id}`}>See Details</Link>
                       </Button>
                     </CardFooter>
                   </Card>
@@ -126,10 +134,10 @@ function ProjectDetail() {
         </div>
       </div>
       <div>
-        <button onClick={handleCreateTask}>Create a new Task</button>
+        <Button onClick={handleCreateTask}>Create a new Task</Button>
       </div>
       <div>
-        <button onClick={handleDeleteProject}>Delete Project</button>
+        <Button onClick={handleDeleteProject}>Delete Project</Button>
       </div>
     </>
   ) : (

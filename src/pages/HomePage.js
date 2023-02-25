@@ -32,7 +32,7 @@ function HomePage() {
         >
           <Heading lineHeight="tall">
             <Highlight
-              query={["Pro", "Tasker"]}
+              query={["Pro Tasker"]}
               styles={{ px: "2", py: "1", rounded: "full", bg: "teal.100" }}
             >
               Welcome to Pro Tasker

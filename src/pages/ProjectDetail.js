@@ -2,6 +2,16 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { deleteProject, getProject, getTask } from "../api";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Button,
+  ButtonGroup,
+} from "@chakra-ui/react";
+import { Image } from "@chakra-ui/image";
+import { Divider, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/layout";
 
 function ProjectDetail() {
   const [project, setProject] = useState(null);
@@ -14,7 +24,6 @@ function ProjectDetail() {
       const response = await getProject(projectId);
       setProject(response.data);
     }
-
 
     handleGetProjectDetail();
   }, [projectId]);
@@ -30,53 +39,92 @@ function ProjectDetail() {
 
   return project ? (
     <>
-      <h1>{project.title}</h1>
+      <Heading as='h1' size='4xl' noOfLines={1}>{project.title}</Heading>
+      <div className="taskState">
+        <div>
+          <Heading mb="10" as='h2' size='2xl'>To Do</Heading>
+          <SimpleGrid
+            spacing={4}
+            templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
+          >
+            {project.tasks.map((task) => {
+              return (
+                task.status === "to do" && (
+                  <Card>
+                    <CardHeader>
+                      <Heading size="md"> {task.title} </Heading>
+                    </CardHeader>
+                    <CardBody>
+                      <Text>Deadline: {task.deadline}</Text>
+                    </CardBody>
+                    <CardFooter>
+                      <Button>
+                          <Link to={`/tasks/${task._id}`}>See Details</Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                )
+              );
+            })}
+          </SimpleGrid>
+        </div>
 
-      <div>
-        <h2>To Do</h2>
-        {project.tasks.map((task) => {
-          return (
-            task.status === "to do" && (
-              <div key={task._id}>
-                <div>
-                  <Link to={`/tasks/${task._id}`}>{task.title}</Link>
-                </div>
-              </div>
-            )
-          );
-        })}
+        <div>
+          <Heading mb="10" as='h2' size='2xl'>Doing</Heading>
+          <SimpleGrid
+            spacing={4}
+            templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
+          >
+            {project.tasks.map((task) => {
+              return (
+                task.status === "doing" && (
+                  <Card>
+                    <CardHeader>
+                      <Heading size="md"> {task.title} </Heading>
+                    </CardHeader>
+                    <CardBody>
+                      <Text>Deadline: {task.deadline}</Text>
+                    </CardBody>
+                    <CardFooter>
+                      <Button>
+                          <Link to={`/tasks/${task._id}`}>See Details</Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                )
+              );
+            })}
+          </SimpleGrid>
+        </div>
+
+        <div>
+          <Heading mb="10" as='h2' size='2xl'>Complete</Heading>
+          <SimpleGrid
+            spacing={4}
+            templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
+          >
+            {project.tasks.map((task) => {
+              return (
+                task.status === "complete" && (
+                  <Card>
+                    <CardHeader>
+                      <Heading size="md"> {task.title} </Heading>
+                    </CardHeader>
+                    <CardBody>
+                      <Text>Deadline: {task.deadline}</Text>
+                    </CardBody>
+                    <CardFooter>
+                      <Button>
+                          <Link to={`/tasks/${task._id}`}>See Details</Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                )
+              );
+            })}
+          </SimpleGrid>
+        </div>
       </div>
-
-      <div>
-        <h2>Doing</h2>
-        {project.tasks.map((task) => {
-          return (
-            task.status === "doing" && (
-              <div key={task._id}>
-                <div>
-                  <Link to={`/tasks/${task._id}`}>{task.title}</Link>
-                </div>
-              </div>
-            )
-          );
-        })}
-      </div>
-
-      <div>
-        <h2>Complete</h2>
-        {project.tasks.map((task) => {
-          return (
-            task.status === "complete" && (
-              <div key={task._id}>
-                <div>
-                  <Link to={`/tasks/${task._id}`}>{task.title}</Link>
-                </div>
-              </div>
-            )
-          );
-        })}
-      </div>
-
       <div>
         <button onClick={handleCreateTask}>Create a new Task</button>
       </div>

@@ -9,8 +9,10 @@ function Dashboard() {
   }
   return (
     <>
+      
       <ListProjects />
       <button onClick={handleCreateNewProject}>Create New Project</button>
+
     </>
   );
 }

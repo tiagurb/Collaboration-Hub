@@ -5,7 +5,7 @@ import { deleteProject, getProject, getTask } from "../api";
 
 function ProjectDetail() {
   const [project, setProject] = useState(null);
-  const [task, setTask] = useState([]);
+  // const [task, setTask] = useState([]);
   const { projectId } = useParams();
   const navigate = useNavigate();
 

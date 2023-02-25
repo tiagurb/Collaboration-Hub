@@ -3,6 +3,18 @@ import { Link, useNavigate } from "react-router-dom";
 import { login } from "../api";
 import { toast } from "react-toastify";
 import { UserContext } from "../context/user.context";
+import {
+  Flex,
+  Box,
+  FormControl,
+  FormLabel,
+  Input,
+  Stack,
+  Button,
+  Heading,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -34,19 +46,65 @@ function Login() {
 
   return (
     <>
-      <h3>Login</h3>
-      <form>
-        <label htmlFor="email">Email</label>
-        <input id="email" type="email" onChange={handleEmailChange} />
-        <label htmlFor="password">Password</label>
-        <input id="password" type="password" onChange={handlePasswordChange} />
-
-        <button type="submit" onClick={handleSubmitForm}>
-          Login
-        </button>
-      </form>
-      <p>Don't have an account?</p>
-      <Link to="/signup">Signup</Link>
+      <Flex
+        minH={"100vh"}
+        align={"center"}
+        justify={"center"}
+        bg={useColorModeValue("gray.50", "gray.800")}
+      >
+        <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
+          <Stack align={"center"}>
+            <Heading fontSize={"4xl"}>Login to your account</Heading>
+            <Text fontSize={"lg"} color={"gray.600"}>
+              to enjoy all your Pro Tasker
+              <Link color={"blue.400"}> features</Link> ✌️
+            </Text>
+          </Stack>
+          <Box
+            rounded={"lg"}
+            bg={useColorModeValue("white", "gray.700")}
+            boxShadow={"lg"}
+            p={8}
+          >
+            <Stack spacing={4}>
+              <FormControl id="email">
+                <FormLabel>Email address</FormLabel>
+                <Input id="email" type="email" onChange={handleEmailChange} />
+              </FormControl>
+              <FormControl id="password">
+                <FormLabel>Password</FormLabel>
+                <Input
+                  id="password"
+                  type="password"
+                  onChange={handlePasswordChange}
+                />
+              </FormControl>
+              <Stack spacing={10}>
+                <Stack
+                  direction={{ base: "column", sm: "row" }}
+                  align={"start"}
+                  justify={"space-between"}
+                >
+                  <Link to="/signup" color={"blue.400"}>
+                    Already have an account?
+                  </Link>
+                </Stack>
+                <Button
+                  type="submit"
+                  onClick={handleSubmitForm}
+                  bg={"blue.400"}
+                  color={"white"}
+                  _hover={{
+                    bg: "blue.500",
+                  }}
+                >
+                  Sign in
+                </Button>
+              </Stack>
+            </Stack>
+          </Box>
+        </Stack>
+      </Flex>
     </>
   );
 }

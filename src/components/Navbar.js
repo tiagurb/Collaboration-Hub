@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { UserContext } from "../context/user.context";
 import { useContext } from "react";
+import { Button } from "@chakra-ui/react";
 
 function Navbar() {
   const { loggedUser, logout } = useContext(UserContext);
@@ -12,8 +13,10 @@ function Navbar() {
           {loggedUser ? (
             <div>
               <p>Welcome {loggedUser.username}</p>
-              <div><NavLink to="/dashboard">Dashboard</NavLink></div>
-              <button onClick={logout}>Logout</button>
+              <div>
+                <NavLink to="/dashboard">Dashboard</NavLink>
+              </div>
+              <Button onClick={logout}>Logout</Button>
             </div>
           ) : (
             <>

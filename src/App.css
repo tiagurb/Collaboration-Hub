@@ -41,7 +41,7 @@
   }
 }
 
-.taskState {
+.taskList {
   display: flex;
   justify-content: space-around;
 }
@@ -49,3 +49,4 @@
 .highlightList {
   background-color: #C23156;
 }
+

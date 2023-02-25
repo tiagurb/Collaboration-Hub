@@ -25,7 +25,7 @@ function ProjectCreate() {
     });
 
     toast.success("Project created");
-    navigate("/project");
+    navigate("/dashboard");
   }
 
   return (

@@ -61,7 +61,7 @@ function TaskCreate() {
     );
 
     toast.success("Task created");
-    navigate("/");
+    navigate("/dashboard");
   }
 
   return (

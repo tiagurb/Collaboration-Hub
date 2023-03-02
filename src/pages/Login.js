@@ -86,7 +86,7 @@ function Login() {
                   justify={"space-between"}
                 >
                   <Link to="/signup" color={"blue.400"}>
-                    Already have an account?
+                    Create a new account
                   </Link>
                 </Stack>
                 <Button

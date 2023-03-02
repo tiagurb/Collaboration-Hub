@@ -83,7 +83,6 @@ function TaskCreate() {
           name="filename"
           type="file"
           onChange={handleImageChange}
-          value={image}
         />
         <label htmlFor="deadline">Deadline</label>
         <input id="deadline" type="date" onChange={handleDeadlineChange} />

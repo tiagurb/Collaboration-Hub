@@ -70,7 +70,7 @@ function TaskCreate() {
       <FormControl onSubmit={handleSubmitForm}>
       <Flex>
         <FormLabel htmlFor="title">Title</FormLabel>
-        <Input id="title" type="text" onChange={handleTitleChange} />
+        <Input maxW="60vw" id="title" type="text" onChange={handleTitleChange} />
 
         <FormLabel htmlFor="description">Description</FormLabel>
         <Input

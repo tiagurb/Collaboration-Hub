@@ -6,7 +6,6 @@ import { createTask, uploadImage } from "../api";
 function TaskCreate() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [steps, setSteps] = useState("");
   const [image, setImage] = useState(null);
   const [deadline, setDeadline] = useState(0);
   const { projectId } = useParams();
@@ -21,10 +20,6 @@ function TaskCreate() {
     setDescription(event.target.value);
   }
 
-  function handleStepsChange(event) {
-    setSteps(event.target.value);
-  }
-
   function handleImageChange(event) {
     setImage(event.target.files[0]);
   }
@@ -35,7 +30,7 @@ function TaskCreate() {
 
   async function handleSubmitForm(event) {
     event.preventDefault();
-    console.log({ title, description, steps, deadline });
+    console.log({ title, description, deadline });
 
     //1. Upload the image through the backend
 
@@ -53,7 +48,6 @@ function TaskCreate() {
       {
         title,
         description,
-        steps,
         deadline,
         imageUrl: response ? response.data.fileUrl : "",
       },
@@ -75,8 +69,6 @@ function TaskCreate() {
           type="text"
           onChange={handleDescriptionChange}
         />
-        <label htmlFor="steps">Steps</label>
-        <input id="steps" type="text" onChange={handleStepsChange} />
         <label htmlFor="image">Image</label>
         <input
           id="image"

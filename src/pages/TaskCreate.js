@@ -1,3 +1,9 @@
+import {
+  FormControl,
+  FormHelperText,
+  FormLabel,
+  Input,
+} from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -60,27 +66,28 @@ function TaskCreate() {
 
   return (
     <>
-      <form onSubmit={handleSubmitForm}>
-        <label htmlFor="title">Title</label>
-        <input id="title" type="text" onChange={handleTitleChange} />
-        <label htmlFor="description">Description</label>
-        <input
+      <FormControl onSubmit={handleSubmitForm}>
+        <FormLabel htmlFor="title">Title</FormLabel>
+        <Input id="title" type="text" onChange={handleTitleChange} />
+
+        <FormLabel htmlFor="description">Description</FormLabel>
+        <Input
           id="description"
           type="text"
           onChange={handleDescriptionChange}
         />
-        <label htmlFor="image">Image</label>
-        <input
+        <FormLabel htmlFor="image">Image</FormLabel>
+        <Input
           id="image"
           name="filename"
           type="file"
           onChange={handleImageChange}
         />
-        <label htmlFor="deadline">Deadline</label>
-        <input id="deadline" type="date" onChange={handleDeadlineChange} />
+        <FormLabel htmlFor="deadline">Deadline</FormLabel>
+        <Input id="deadline" type="date" onChange={handleDeadlineChange} />
 
         <button type="submit">Create Task</button>
-      </form>
+      </FormControl>
     </>
   );
 }

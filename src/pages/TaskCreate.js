@@ -1,4 +1,5 @@
 import {
+  Flex,
   FormControl,
   FormHelperText,
   FormLabel,
@@ -67,6 +68,7 @@ function TaskCreate() {
   return (
     <>
       <FormControl onSubmit={handleSubmitForm}>
+      <Flex>
         <FormLabel htmlFor="title">Title</FormLabel>
         <Input id="title" type="text" onChange={handleTitleChange} />
 
@@ -87,6 +89,7 @@ function TaskCreate() {
         <Input id="deadline" type="date" onChange={handleDeadlineChange} />
 
         <button type="submit">Create Task</button>
+        </Flex>
       </FormControl>
     </>
   );

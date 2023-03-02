@@ -18,11 +18,7 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-import {
-  IoAnalyticsSharp,
-  IoLogoBitcoin,
-  IoSearchSharp,
-} from "react-icons/io5";
+import { FcApproval, FcViewDetails, FcBullish, FcLeave } from "react-icons/fc";
 
 const Feature = ({ text, icon, iconBg }) => {
   return (
@@ -114,9 +110,9 @@ function HomePage() {
           </Stack>
         </Stack>
       </Container>
-      <Container maxW={"5xl"} py={12}>
+      <Container maxW={"6xl"} py={12} mt={200}>
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-          <Stack spacing={4}>
+          <Stack spacing={5}>
             <Text
               textTransform={"uppercase"}
               color={"blue.400"}
@@ -147,35 +143,24 @@ function HomePage() {
             >
               <Feature
                 icon={
-                  <Icon
-                    as={IoAnalyticsSharp}
-                    color={"yellow.500"}
-                    w={5}
-                    h={5}
-                  />
+                  <Icon as={FcViewDetails} color={"yellow.500"} w={5} h={5} />
                 }
                 iconBg={useColorModeValue("yellow.100", "yellow.900")}
                 text={"Create and manage tasks"}
               />
               <Feature
-                icon={
-                  <Icon as={IoLogoBitcoin} color={"green.500"} w={5} h={5} />
-                }
+                icon={<Icon as={FcLeave} color={"green.500"} w={5} h={5} />}
                 iconBg={useColorModeValue("green.100", "green.900")}
                 text={"Set deadlines"}
               />
               <Feature
-                icon={
-                  <Icon as={IoSearchSharp} color={"purple.500"} w={5} h={5} />
-                }
+                icon={<Icon as={FcBullish} color={"purple.500"} w={5} h={5} />}
                 iconBg={useColorModeValue("purple.100", "purple.900")}
                 text={"Track progress"}
               />
               <Feature
-                icon={
-                  <Icon as={IoSearchSharp} color={"purple.500"} w={5} h={5} />
-                }
-                iconBg={useColorModeValue("purple.100", "purple.900")}
+                icon={<Icon as={FcApproval} color={"blue.500"} w={5} h={5} />}
+                iconBg={useColorModeValue("blue.100", "blue.900")}
                 text={"Stay on top of everything and get things done!"}
               />
             </Stack>

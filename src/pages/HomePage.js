@@ -20,6 +20,80 @@ import { Link } from "react-router-dom";
 
 import { FcApproval, FcViewDetails, FcBullish, FcLeave } from "react-icons/fc";
 
+import { Avatar } from "@chakra-ui/react";
+
+import { chakra, VisuallyHidden } from "@chakra-ui/react";
+import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+
+const Testimonial = ({ children }) => {
+  return <Box>{children}</Box>;
+};
+
+const TestimonialContent = ({ children }) => {
+  return (
+    <Stack
+      bg={useColorModeValue("white", "gray.800")}
+      boxShadow={"lg"}
+      p={8}
+      rounded={"xl"}
+      align={"center"}
+      pos={"relative"}
+      _after={{
+        content: `""`,
+        w: 0,
+        h: 0,
+        borderLeft: "solid transparent",
+        borderLeftWidth: 16,
+        borderRight: "solid transparent",
+        borderRightWidth: 16,
+        borderTop: "solid",
+        borderTopWidth: 16,
+        borderTopColor: useColorModeValue("white", "gray.800"),
+        pos: "absolute",
+        bottom: "-16px",
+        left: "50%",
+        transform: "translateX(-50%)",
+      }}
+    >
+      {children}
+    </Stack>
+  );
+};
+
+const TestimonialHeading = ({ children }) => {
+  return (
+    <Heading as={"h3"} fontSize={"xl"}>
+      {children}
+    </Heading>
+  );
+};
+
+const TestimonialText = ({ children }) => {
+  return (
+    <Text
+      textAlign={"center"}
+      color={useColorModeValue("gray.600", "gray.400")}
+      fontSize={"sm"}
+    >
+      {children}
+    </Text>
+  );
+};
+
+const TestimonialAvatar = ({ src, name, title }) => {
+  return (
+    <Flex align={"center"} mt={8} direction={"column"}>
+      <Avatar src={src} alt={name} mb={2} />
+      <Stack spacing={-1} align={"center"}>
+        <Text fontWeight={600}>{name}</Text>
+        <Text fontSize={"sm"} color={useColorModeValue("gray.600", "gray.400")}>
+          {title}
+        </Text>
+      </Stack>
+    </Flex>
+  );
+};
+
 const Feature = ({ text, icon, iconBg }) => {
   return (
     <Stack direction={"row"} align={"center"}>
@@ -35,6 +109,39 @@ const Feature = ({ text, icon, iconBg }) => {
       </Flex>
       <Text fontWeight={600}>{text}</Text>
     </Stack>
+  );
+};
+
+const Logo = () => {
+  return (
+    <img
+      src="https://res.cloudinary.com/dq8v89bym/image/upload/v1677323940/zyro-image_1_i2yqtu.png"
+      alt="pro tasker logo"
+    />
+  );
+};
+
+const SocialButton = ({ children, label, href }) => {
+  return (
+    <chakra.button
+      bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
+      rounded={"full"}
+      w={8}
+      h={8}
+      cursor={"pointer"}
+      as={"a"}
+      href={href}
+      display={"inline-flex"}
+      alignItems={"center"}
+      justifyContent={"center"}
+      transition={"background 0.3s ease"}
+      _hover={{
+        bg: useColorModeValue("blackAlpha.200", "whiteAlpha.200"),
+      }}
+    >
+      <VisuallyHidden>{label}</VisuallyHidden>
+      {children}
+    </chakra.button>
   );
 };
 
@@ -177,6 +284,97 @@ function HomePage() {
           </Flex>
         </SimpleGrid>
       </Container>
+      <Box bg={useColorModeValue("gray.100", "gray.700")}>
+        <Container maxW={"7xxl"} py={16} as={Stack} spacing={30}>
+          <Stack spacing={0} align={"center"}>
+            <Heading>Our Clients Speak</Heading>
+            <Text>We have been working with clients around the world</Text>
+          </Stack>
+          <Stack
+            direction={{ base: "column", md: "row" }}
+            spacing={{ base: 10, md: 4, lg: 10 }}
+          >
+            <Testimonial>
+              <TestimonialContent>
+                <TestimonialHeading>Efficient Collaborating</TestimonialHeading>
+                <TestimonialText>
+                  I just love this, my company has skyrocketed it's profits
+                  since we started using Pro Tasker. I just can't recommend this
+                  enough!
+                </TestimonialText>
+              </TestimonialContent>
+              <TestimonialAvatar
+                src={
+                  "https://res.cloudinary.com/dq8v89bym/image/upload/v1677789930/image_4_qv0qaz.png"
+                }
+                name={"José Zuccon"}
+                title={"CEO at Zucc Corporation"}
+              />
+            </Testimonial>
+            <Testimonial>
+              <TestimonialContent>
+                <TestimonialHeading>Intuitive Design</TestimonialHeading>
+                <TestimonialText>
+                  Looks beatiful and the UI is very intuitive, what not to love
+                  on Pro Tasker?
+                </TestimonialText>
+              </TestimonialContent>
+              <TestimonialAvatar
+                src={
+                  "https://res.cloudinary.com/dq8v89bym/image/upload/v1677789930/image_3_g4iobp.png"
+                }
+                name={"Marta Peres"}
+                title={"CEO at Woofr"}
+              />
+            </Testimonial>
+            <Testimonial>
+              <TestimonialContent>
+                <TestimonialHeading>Mindblowing Service</TestimonialHeading>
+                <TestimonialText>
+                  I can confidently say that this task management app has been a
+                  game-changer for me. It has helped me to become more
+                  organized, productive, and efficient in my daily life.
+                </TestimonialText>
+              </TestimonialContent>
+              <TestimonialAvatar
+                src={
+                  "https://res.cloudinary.com/dq8v89bym/image/upload/v1677789930/image_2_gditgb.png"
+                }
+                name={"Francisco Duarte"}
+                title={"CEO at Ouriço"}
+              />
+            </Testimonial>
+          </Stack>
+        </Container>
+      </Box>
+      <Box
+        bg={useColorModeValue("gray.50", "gray.900")}
+        color={useColorModeValue("gray.700", "gray.200")}
+      >
+        <Container
+          as={Stack}
+          maxW={"6xl"}
+          py={4}
+          direction={{ base: "column", md: "row" }}
+          spacing={4}
+          justify={{ base: "center", md: "space-between" }}
+          align={{ base: "center", md: "center" }}
+        >
+          <Logo />
+          <Text>© 2022 Pro Tasker. All rights reserved</Text>
+          <Stack direction={"row"} spacing={6}>
+            <SocialButton label={"Twitter"} href={"#"}>
+              <FaTwitter />
+            </SocialButton>
+            <SocialButton label={"YouTube"} href={"#"}>
+              <FaYoutube />
+            </SocialButton>
+            <SocialButton label={"Instagram"} href={"#"}>
+              <FaInstagram />
+            </SocialButton>
+          </Stack>
+        </Container>
+      </Box>
     </>
   );
 }

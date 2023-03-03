@@ -1,4 +1,5 @@
 import {
+  Button,
   Flex,
   FormControl,
   FormHelperText,
@@ -68,7 +69,7 @@ function TaskCreate() {
   return (
     <>
       <FormControl onSubmit={handleSubmitForm}>
-      <Flex>
+      <Flex wrap="wrap">
         <FormLabel htmlFor="title">Title</FormLabel>
         <Input maxW="60vw" id="title" type="text" onChange={handleTitleChange} />
 
@@ -79,7 +80,7 @@ function TaskCreate() {
           onChange={handleDescriptionChange}
         />
         <FormLabel htmlFor="image">Image</FormLabel>
-        <Input
+        <Button
           id="image"
           name="filename"
           type="file"

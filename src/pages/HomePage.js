@@ -1,4 +1,3 @@
-import { Highlight } from "@chakra-ui/react";
 import Head from "next/head";
 
 import {
@@ -156,21 +155,24 @@ function HomePage() {
           rel="stylesheet"
         />
       </Head>
-      <Container maxW={"6xl"}>
+      <Container maxW={"9xl"} backgroundColor={"#EDF2F7"}>
         <Stack
           as={Box}
           textAlign={"center"}
           spacing={{ base: 8, md: 14 }}
           py={{ base: 20, md: 36 }}
         >
-          <Heading lineHeight="tall">
-            <Highlight
-              query={["Pro Tasker"]}
-              styles={{ px: "2", py: "1", rounded: "full", bg: "teal.100" }}
+          <Heading>
+            <Text
+              fontSize="8xl"
+              fontWeight="extrabold"
+              bgClip="text"
+              bgGradient="linear(to-l, #2892C6, #C23156)"
             >
-              Welcome to Pro Tasker
-            </Highlight>
+              Pro Tasker
+            </Text>
           </Heading>
+
           <Text color={"gray.500"}>
             Change the way you and your colleagues organize your projects and do
             your tasks!
@@ -219,7 +221,7 @@ function HomePage() {
           </Stack>
         </Stack>
       </Container>
-      <Container maxW={"6xl"} py={12} mt={100}>
+      <Container maxW={"6xl"} py={12} mt={"40"} mb={"40"}>
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
           <Stack spacing={5}>
             <Text
@@ -287,7 +289,7 @@ function HomePage() {
         </SimpleGrid>
       </Container>
       <Box bg={useColorModeValue("gray.100", "gray.700")}>
-        <Container maxW={"7xxl"} py={16} as={Stack} spacing={30}>
+        <Container maxW={"7xxl"} py={16} as={Stack} spacing={30} p={"15vh"}>
           <Stack spacing={0} align={"center"}>
             <Heading>Our Clients Speak</Heading>
             <Text>We have been working with clients around the world</Text>
@@ -301,8 +303,7 @@ function HomePage() {
                 <TestimonialHeading>Efficient Collaborating</TestimonialHeading>
                 <TestimonialText>
                   I just love this, my company has skyrocketed it's profits
-                  since we started using Pro Tasker. I just can't recommend this
-                  enough!
+                  since we started using Pro Tasker.
                 </TestimonialText>
               </TestimonialContent>
               <TestimonialAvatar
@@ -334,8 +335,7 @@ function HomePage() {
                 <TestimonialHeading>Mindblowing Service</TestimonialHeading>
                 <TestimonialText>
                   I can confidently say that this task management app has been a
-                  game-changer for me. It has helped me to become more
-                  organized, productive, and efficient in my daily life.
+                  game-changer for me.
                 </TestimonialText>
               </TestimonialContent>
               <TestimonialAvatar
@@ -355,7 +355,7 @@ function HomePage() {
       >
         <Container
           as={Stack}
-          maxW={"8xl"}
+          maxW={"9xl"}
           py={4}
           direction={{ base: "column", md: "row" }}
           spacing={4}
@@ -363,13 +363,20 @@ function HomePage() {
           align={{ base: "center", md: "center" }}
         >
           <Logo />
-          <Text>© 2022 Pro Tasker. All rights reserved</Text>
-          <Stack direction={"row"} spacing={6}>
-            <Text>João Mesquita</Text>
+          <Text
+            bgGradient="linear(to-l, #2892C6, #C23156)"
+            bgClip="text"
+            fontSize="1xl"
+            fontWeight="extrabold"
+          >
+            © 2023 Pro Tasker. All rights reserved
+          </Text>
+          <Stack direction={"row"} spacing={5}>
+            <Text>João</Text>
             <SocialButton label={"Linkedin"} href={"#"}>
               <FaLinkedin />
             </SocialButton>
-            <Text>Tiago Barata</Text>
+            <Text>Tiago</Text>
             <SocialButton label={"Linkedin"} href={"#"}>
               <FaLinkedin />
             </SocialButton>

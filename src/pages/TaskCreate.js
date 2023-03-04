@@ -88,7 +88,7 @@ function TaskCreate() {
         <FormLabel htmlFor="deadline">Deadline</FormLabel>
         <Input id="deadline" type="date" onChange={handleDeadlineChange} />
 
-        <Button type="submit">Create Task</Button>
+        <button type="submit">Create Task</button>
         </Flex>
       </FormControl>
     </>

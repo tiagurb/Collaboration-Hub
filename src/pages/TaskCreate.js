@@ -79,7 +79,7 @@ function TaskCreate() {
           onChange={handleDescriptionChange}
         />
         <FormLabel htmlFor="image">Image</FormLabel>
-        <Button
+        <button
           id="image"
           name="filename"
           type="file"

@@ -1,23 +1,18 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
-import { deleteProject, getProject, getTask } from "../api";
+import { deleteProject, getProject } from "../api";
 import {
   Card,
   CardHeader,
   CardBody,
   CardFooter,
   Button,
-  ButtonGroup,
 } from "@chakra-ui/react";
-import { Image } from "@chakra-ui/image";
 import {
-  Center,
-  Divider,
   Heading,
   Highlight,
   SimpleGrid,
-  Stack,
   Text,
 } from "@chakra-ui/layout";
 

@@ -23,7 +23,7 @@ import { FcApproval, FcViewDetails, FcBullish, FcLeave } from "react-icons/fc";
 import { Avatar } from "@chakra-ui/react";
 
 import { chakra, VisuallyHidden } from "@chakra-ui/react";
-import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 
 const Testimonial = ({ children }) => {
   return <Box>{children}</Box>;
@@ -117,6 +117,8 @@ const Logo = () => {
     <img
       src="https://res.cloudinary.com/dq8v89bym/image/upload/v1677323940/zyro-image_1_i2yqtu.png"
       alt="pro tasker logo"
+      width="50"
+      height="70"
     />
   );
 };
@@ -217,7 +219,7 @@ function HomePage() {
           </Stack>
         </Stack>
       </Container>
-      <Container maxW={"6xl"} py={12} mt={200}>
+      <Container maxW={"6xl"} py={12} mt={100}>
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
           <Stack spacing={5}>
             <Text
@@ -353,7 +355,7 @@ function HomePage() {
       >
         <Container
           as={Stack}
-          maxW={"6xl"}
+          maxW={"8xl"}
           py={4}
           direction={{ base: "column", md: "row" }}
           spacing={4}
@@ -363,14 +365,13 @@ function HomePage() {
           <Logo />
           <Text>© 2022 Pro Tasker. All rights reserved</Text>
           <Stack direction={"row"} spacing={6}>
-            <SocialButton label={"Twitter"} href={"#"}>
-              <FaTwitter />
+            <Text>João Mesquita</Text>
+            <SocialButton label={"Linkedin"} href={"#"}>
+              <FaLinkedin />
             </SocialButton>
-            <SocialButton label={"YouTube"} href={"#"}>
-              <FaYoutube />
-            </SocialButton>
-            <SocialButton label={"Instagram"} href={"#"}>
-              <FaInstagram />
+            <Text>Tiago Barata</Text>
+            <SocialButton label={"Linkedin"} href={"#"}>
+              <FaLinkedin />
             </SocialButton>
           </Stack>
         </Container>

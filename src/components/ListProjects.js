@@ -1,9 +1,17 @@
-import { Box, Center, Flex, Heading, HStack, Img, Text, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  Flex,
+  Heading,
+  HStack,
+  Img,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getAllProjects } from "../api";
-import { BsArrowUpRight, BsHeartFill, BsHeart } from 'react-icons/bs';
-
+import { BsArrowUpRight, BsHeartFill, BsHeart } from "react-icons/bs";
 
 function ListProjects() {
   const [projects, setProjects] = useState([]);
@@ -17,7 +25,7 @@ function ListProjects() {
     handleGetAllProjects();
   }, []);
 
-  return (
+  return projects ? (
     <>
       <h3>Projects</h3>
       <ul>
@@ -60,7 +68,7 @@ function ListProjects() {
                       {project.title}
                     </Heading>
                     <Text color={"gray.500"} noOfLines={2}>
-                     {project.description}
+                      {project.description}
                     </Text>
                   </Box>
                   <HStack borderTop={"1px"} color="black">
@@ -73,7 +81,7 @@ function ListProjects() {
                       w="full"
                     >
                       <Text fontSize={"md"} fontWeight={"semibold"}>
-                      <Link to={`/project/${project._id}`}>View Tasks</Link>
+                        <Link to={`/project/${project._id}`}>View Tasks</Link>
                       </Text>
                       <BsArrowUpRight />
                     </Flex>
@@ -85,6 +93,8 @@ function ListProjects() {
         })}
       </ul>
     </>
+  ) : (
+    <p>Loading...</p>
   );
 }
 

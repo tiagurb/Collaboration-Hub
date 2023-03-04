@@ -79,7 +79,7 @@ function TaskCreate() {
           onChange={handleDescriptionChange}
         />
         <FormLabel htmlFor="image">Image</FormLabel>
-        <button
+        <Button
           id="image"
           name="filename"
           type="file"
@@ -88,7 +88,7 @@ function TaskCreate() {
         <FormLabel htmlFor="deadline">Deadline</FormLabel>
         <Input id="deadline" type="date" onChange={handleDeadlineChange} />
 
-        <button type="submit">Create Task</button>
+        <Button type="submit">Create Task</Button>
         </Flex>
       </FormControl>
     </>

@@ -24,8 +24,7 @@ function ProjectCreate() {
     setDescription(event.target.value);
   }
 
-  async function handleSubmitForm(event) {
-    event.preventDefault();
+  async function handleSubmitForm() {
 
     await createProject({
       title,
@@ -42,8 +41,8 @@ function ProjectCreate() {
         <FormControl
           as={GridItem}
           colSpan={[6, 3]}
-          onSubmit={handleSubmitForm}
-          maxW={600} mt={150}
+          maxW={600}
+          mt={150}
         >
           <FormLabel htmlFor="title">Title</FormLabel>
           <Input id="title" type="text" onChange={handleTitleChange} />
@@ -53,7 +52,9 @@ function ProjectCreate() {
             type="text"
             onChange={handleDescriptionChange}
           />
-          <Button type="submit" mt={50}>Create Project</Button>
+          <Button type="submit" onClick={handleSubmitForm} mt={50}>
+            Create Project
+          </Button>
         </FormControl>
       </Center>
     </>

@@ -55,13 +55,6 @@ function TaskDetail() {
       </Select>
       <Button type="submit">Update Status</Button>
       <form />
-      {task.steps.map((step) => {
-        return (
-          <ol>
-            <li key={step}>{step}</li>
-          </ol>
-        );
-      })}
       <h5>Users:</h5>
       {task.users.map((user) => {
         return (

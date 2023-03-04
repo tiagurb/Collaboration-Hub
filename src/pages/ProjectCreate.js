@@ -2,6 +2,14 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import { createProject } from "../api";
 import { useNavigate } from "react-router-dom";
+import {
+  Button,
+  Center,
+  FormControl,
+  FormLabel,
+  GridItem,
+  Input,
+} from "@chakra-ui/react";
 
 function ProjectCreate() {
   const [title, setTitle] = useState("");
@@ -30,17 +38,24 @@ function ProjectCreate() {
 
   return (
     <>
-      <form onSubmit={handleSubmitForm}>
-        <label htmlFor="title">Title</label>
-        <input id="title" type="text" onChange={handleTitleChange} />
-        <label htmlFor="description">Description</label>
-        <input
-          id="description"
-          type="text"
-          onChange={handleDescriptionChange}
-        />
-        <button type="submit">Create Project</button>
-      </form>
+      <Center>
+        <FormControl
+          as={GridItem}
+          colSpan={[6, 3]}
+          onSubmit={handleSubmitForm}
+          maxW={600} mt={150}
+        >
+          <FormLabel htmlFor="title">Title</FormLabel>
+          <Input id="title" type="text" onChange={handleTitleChange} />
+          <FormLabel htmlFor="description">Description</FormLabel>
+          <Input
+            id="description"
+            type="text"
+            onChange={handleDescriptionChange}
+          />
+          <Button type="submit" mt={50}>Create Project</Button>
+        </FormControl>
+      </Center>
     </>
   );
 }

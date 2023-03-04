@@ -25,7 +25,6 @@ function ProjectCreate() {
   }
 
   async function handleSubmitForm() {
-
     await createProject({
       title,
       description,
@@ -38,16 +37,7 @@ function ProjectCreate() {
   return (
     <>
       <Center>
-        <FormControl
-          as={GridItem}
-          colSpan={[6, 3]}
-<<<<<<< HEAD
-          onSubmit={handleSubmitForm}
-=======
->>>>>>> bd155b081156fcb3ba45d0574afc3625f00fa086
-          maxW={600}
-          mt={150}
-        >
+        <FormControl as={GridItem} colSpan={[6, 3]} maxW={600} mt={150}>
           <FormLabel htmlFor="title">Title</FormLabel>
           <Input id="title" type="text" onChange={handleTitleChange} />
           <FormLabel htmlFor="description">Description</FormLabel>
@@ -56,11 +46,7 @@ function ProjectCreate() {
             type="text"
             onChange={handleDescriptionChange}
           />
-<<<<<<< HEAD
-          <Button type="submit" mt={50}>
-=======
           <Button type="submit" onClick={handleSubmitForm} mt={50}>
->>>>>>> bd155b081156fcb3ba45d0574afc3625f00fa086
             Create Project
           </Button>
         </FormControl>

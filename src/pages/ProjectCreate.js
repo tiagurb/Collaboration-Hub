@@ -43,7 +43,8 @@ function ProjectCreate() {
           as={GridItem}
           colSpan={[6, 3]}
           onSubmit={handleSubmitForm}
-          maxW={600} mt={150}
+          maxW={600}
+          mt={150}
         >
           <FormLabel htmlFor="title">Title</FormLabel>
           <Input id="title" type="text" onChange={handleTitleChange} />
@@ -53,7 +54,9 @@ function ProjectCreate() {
             type="text"
             onChange={handleDescriptionChange}
           />
-          <Button type="submit" mt={50}>Create Project</Button>
+          <Button type="submit" mt={50}>
+            Create Project
+          </Button>
         </FormControl>
       </Center>
     </>

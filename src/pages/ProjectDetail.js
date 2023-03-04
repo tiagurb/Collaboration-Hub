@@ -9,7 +9,16 @@ import {
   CardFooter,
   Button,
 } from "@chakra-ui/react";
+<<<<<<< HEAD
 import { Heading, Highlight, SimpleGrid, Text } from "@chakra-ui/layout";
+=======
+import {
+  Heading,
+  Highlight,
+  SimpleGrid,
+  Text,
+} from "@chakra-ui/layout";
+>>>>>>> 12d9f813ea7b5911f0c3abe35558e01f95f5acc1
 
 function ProjectDetail() {
   const [project, setProject] = useState(null);

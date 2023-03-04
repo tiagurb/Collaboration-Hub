@@ -6,12 +6,11 @@ import {
   HStack,
   Img,
   Text,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getAllProjects } from "../api";
-import { BsArrowUpRight, BsHeartFill, BsHeart } from "react-icons/bs";
+import { BsArrowUpRight } from "react-icons/bs";
 
 function ListProjects() {
   const [projects, setProjects] = useState([]);

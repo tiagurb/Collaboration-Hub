@@ -1,25 +1,15 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
-import { deleteProject, getProject, getTask } from "../api";
+import { deleteProject, getProject } from "../api";
 import {
   Card,
   CardHeader,
   CardBody,
   CardFooter,
   Button,
-  ButtonGroup,
 } from "@chakra-ui/react";
-import { Image } from "@chakra-ui/image";
-import {
-  Center,
-  Divider,
-  Heading,
-  Highlight,
-  SimpleGrid,
-  Stack,
-  Text,
-} from "@chakra-ui/layout";
+import { Heading, Highlight, SimpleGrid, Text } from "@chakra-ui/layout";
 
 function ProjectDetail() {
   const [project, setProject] = useState(null);
@@ -67,7 +57,7 @@ function ProjectDetail() {
             {project.tasks.map((task) => {
               return (
                 task.status === "to do" && (
-                  <Card align='center' styles={{backgroundColor: "#FFFFFF"}}>
+                  <Card align="center" styles={{ backgroundColor: "#FFFFFF" }}>
                     <CardHeader>
                       <Heading size="md"> {task.title} </Heading>
                     </CardHeader>
@@ -75,9 +65,7 @@ function ProjectDetail() {
                       <Text>
                         Deadline: {new Date(task.deadline).toLocaleDateString()}
                       </Text>
-                      <Text>
-                        Task Owners: {task.users}
-                      </Text>
+                      <Text>Task Owners: {task.users}</Text>
                     </CardBody>
                     <CardFooter>
                       <Button>
@@ -107,15 +95,15 @@ function ProjectDetail() {
             {project.tasks.map((task) => {
               return (
                 task.status === "working" && (
-                  <Card align='center'>
+                  <Card align="center">
                     <CardHeader>
                       <Heading size="md"> {task.title} </Heading>
                     </CardHeader>
                     <CardBody>
-                      <Text>Deadline: {new Date(task.deadline).toLocaleDateString()}</Text>
                       <Text>
-                        Task Owners: {task.users}
+                        Deadline: {new Date(task.deadline).toLocaleDateString()}
                       </Text>
+                      <Text>Task Owners: {task.users}</Text>
                     </CardBody>
                     <CardFooter>
                       <Button>
@@ -145,15 +133,15 @@ function ProjectDetail() {
             {project.tasks.map((task) => {
               return (
                 task.status === "complete" && (
-                  <Card align='center'>
+                  <Card align="center">
                     <CardHeader>
                       <Heading size="md"> {task.title} </Heading>
                     </CardHeader>
                     <CardBody>
-                      <Text>Deadline: {new Date(task.deadline).toLocaleDateString()}</Text>
                       <Text>
-                        Task Owners: {task.users}
+                        Deadline: {new Date(task.deadline).toLocaleDateString()}
                       </Text>
+                      <Text>Task Owners: {task.users}</Text>
                     </CardBody>
                     <CardFooter>
                       <Button>

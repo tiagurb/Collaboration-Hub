@@ -1,8 +1,10 @@
 import {
   Button,
+  Center,
   Flex,
   FormControl,
   FormLabel,
+  GridItem,
   Input,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
@@ -35,8 +37,7 @@ function TaskCreate() {
     setDeadline(event.target.value);
   }
 
-  async function handleSubmitForm(event) {
-    event.preventDefault();
+  async function handleSubmitForm() {
     console.log({ title, description, deadline });
 
     //1. Upload the image through the backend
@@ -67,30 +68,42 @@ function TaskCreate() {
 
   return (
     <>
-      <FormControl onSubmit={handleSubmitForm}>
-      <Flex wrap="wrap">
-        <FormLabel htmlFor="title">Title</FormLabel>
-        <Input maxW="60vw" id="title" type="text" onChange={handleTitleChange} />
+      <Center>
+        <FormControl as={GridItem}
+          colSpan={[6, 3]}
+          maxW={600}
+          mt={150}>
+          <Flex wrap="wrap">
+            <FormLabel htmlFor="title">Title</FormLabel>
+            <Input
+              maxW="60vw"
+              id="title"
+              type="text"
+              onChange={handleTitleChange}
+            />
 
-        <FormLabel htmlFor="description">Description</FormLabel>
-        <Input
-          id="description"
-          type="text"
-          onChange={handleDescriptionChange}
-        />
-        <FormLabel htmlFor="image">Image</FormLabel>
-        <Button
-          id="image"
-          name="filename"
-          type="file"
-          onChange={handleImageChange}
-        />
-        <FormLabel htmlFor="deadline">Deadline</FormLabel>
-        <Input id="deadline" type="date" onChange={handleDeadlineChange} />
+            <FormLabel htmlFor="description">Description</FormLabel>
+            <Input
+              id="description"
+              type="text"
+              onChange={handleDescriptionChange}
+            />
+            <FormLabel htmlFor="image">Image</FormLabel>
+            <Input
+              id="image"
+              name="filename"
+              type="file"
+              onChange={handleImageChange}
+            />
+            <FormLabel htmlFor="deadline">Deadline</FormLabel>
+            <Input id="deadline" type="date" onChange={handleDeadlineChange} />
 
-        <Button type="submit">Create Task</Button>
-        </Flex>
-      </FormControl>
+            <Button type="submit" onClick={handleSubmitForm}>
+              Create Task
+            </Button>
+          </Flex>
+        </FormControl>
+      </Center>
     </>
   );
 }

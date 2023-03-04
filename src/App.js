@@ -18,18 +18,7 @@ import TaskUpdate from "./pages/TaskUpdate";
 function App() {
   return (
     <div className="App">
-      <ToastContainer
-      // position="top-right"
-      // autoClose={5000}
-      // hideProgressBar={false}
-      // newestOnTop={false}
-      // closeOnClick
-      // rtl={false}
-      // pauseOnFocusLoss
-      // draggable
-      // pauseOnHover
-      // theme="dark"
-      />
+      <ToastContainer/>
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -37,15 +26,6 @@ function App() {
         <Route path="/project" element={<ListProjects />} />
         <Route path="/project/create" element={<ProjectCreate />} />
         <Route path="/project/:projectId" element={<ProjectDetail />} />
-        {/* <Route
-          path="/projects/add"
-          element={
-            // <IsPrivate>
-            //   <AddProject />
-            // </IsPrivate>
-          }
-        /> */}
-        {/* <Route path="/projects/:projectId" element={<ProjectDetail />} /> */}
         <Route path="/tasks" element={<ListTask />} />
         <Route path="/tasks/:taskId" element={<TaskDetail />} />
         <Route path="/tasks/update/:taskId" element={<TaskUpdate />} />

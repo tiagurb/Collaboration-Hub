@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, ReactElement } from "react";
 import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { deleteProject, getProject } from "../api";
@@ -8,8 +8,14 @@ import {
   CardBody,
   CardFooter,
   Button,
+  Box,
+  SimpleGrid,
+  Icon,
+  Text,
+  Stack,
+  Flex,
 } from "@chakra-ui/react";
-import { Heading, Highlight, SimpleGrid, Text } from "@chakra-ui/layout";
+import { Heading, Highlight } from "@chakra-ui/layout";
 
 function ProjectDetail() {
   const [project, setProject] = useState(null);
@@ -34,6 +40,8 @@ function ProjectDetail() {
   function handleCreateTask() {
     navigate(`/tasks/create/${project._id}`);
   }
+
+  
 
   return project ? (
     <>

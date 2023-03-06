@@ -164,7 +164,7 @@ function HomePage() {
         >
           <Heading>
             <Text
-              fontSize="8xl"
+              fontSize="9xl"
               fontWeight="extrabold"
               bgClip="text"
               bgGradient="linear(to-l, #2892C6, #C23156)"
@@ -291,8 +291,8 @@ function HomePage() {
       <Box bg={useColorModeValue("gray.100", "gray.700")}>
         <Container maxW={"7xxl"} py={16} as={Stack} spacing={30} p={"15vh"}>
           <Stack spacing={0} align={"center"}>
-            <Heading>Our Clients Speak</Heading>
-            <Text>We have been working with clients around the world</Text>
+            <Heading>Our Amazing Clients Speak</Heading>
+            <Text>We have been working with clients all over Portugal</Text>
           </Stack>
           <Stack
             direction={{ base: "column", md: "row" }}
@@ -373,11 +373,17 @@ function HomePage() {
           </Text>
           <Stack direction={"row"} spacing={5}>
             <Text>João</Text>
-            <SocialButton label={"Linkedin"} href={"#"}>
+            <SocialButton
+              label={"Linkedin"}
+              href={"https://www.linkedin.com/in/joaopsmesquita/"}
+            >
               <FaLinkedin />
             </SocialButton>
             <Text>Tiago</Text>
-            <SocialButton label={"Linkedin"} href={"#"}>
+            <SocialButton
+              label={"Linkedin"}
+              href={"https://www.linkedin.com/in/tiago-barata19/"}
+            >
               <FaLinkedin />
             </SocialButton>
           </Stack>

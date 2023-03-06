@@ -33,6 +33,7 @@ import {
   FiBell,
   FiChevronDown,
 } from "react-icons/fi";
+import HomeNavBar from "./HomeNavBar";
 
 const LinkItems = [
   { name: "Home", icon: FiHome },
@@ -74,13 +75,8 @@ export default function Navbar({ children }) {
         </>
       ) : (
         <>
-               <div>
-                 <NavLink to="/login">Login</NavLink>
-               </div>
-               <div>
-                 <NavLink to="/signup">Signup</NavLink>
-               </div>
-             </>
+          <HomeNavBar />
+        </>
       )}
     </>
   );
@@ -99,7 +95,11 @@ const SidebarContent = ({ onClose, ...rest }) => {
       {...rest}
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-        <img src="https://res.cloudinary.com/dq8v89bym/image/upload/v1677323940/zyro-image_1_i2yqtu.png" alt="Logo" className="navLogo" />
+        <img
+          src="https://res.cloudinary.com/dq8v89bym/image/upload/v1677323940/zyro-image_1_i2yqtu.png"
+          alt="Logo"
+          className="navLogo"
+        />
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
@@ -206,7 +206,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
               bg={useColorModeValue("white", "gray.900")}
               borderColor={useColorModeValue("gray.200", "gray.700")}
             >
-               <MenuItem>Sign out</MenuItem> 
+              <MenuItem>Sign out</MenuItem>
             </MenuList>
           </Menu>
         </Flex>

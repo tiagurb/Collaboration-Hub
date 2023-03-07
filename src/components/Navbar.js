@@ -34,7 +34,7 @@ import {
   FiChevronDown,
 } from "react-icons/fi";
 import HomeNavBar from "./HomeNavBar";
-import { AddIcon } from "@chakra-ui/icons";
+import { AddIcon, SmallAddIcon } from "@chakra-ui/icons";
 
 // const navigate = useNavigate();
 //   function handleCreateNewProject() {
@@ -43,11 +43,12 @@ import { AddIcon } from "@chakra-ui/icons";
 
 //       <button onClick={handleCreateNewProject}>Create New Project</button>
 
+
+
 const LinkItems = [
   { name: "Dashboard", icon: FiHome, path: "/dashboard" },
-  { name: "Create a Project", icon: AddIcon, path: "/project/create" },
-  { name: "Explore", icon: FiCompass, path: "/explore" },
-  { name: "Favourites", icon: FiStar, path: "/favourites" },
+  { name: "Create a Project", icon: SmallAddIcon, path: "/project/create" },
+  { name: "Create a Task", icon: AddIcon, path: "/explore" },
   { name: "Settings", icon: FiSettings, path: "/settings" },
 ];
 

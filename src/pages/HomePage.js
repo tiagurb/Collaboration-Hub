@@ -164,7 +164,7 @@ function HomePage() {
         >
           <Heading>
             <Text
-              fontSize="9xl"
+              fontSize="8xl"
               fontWeight="extrabold"
               bgClip="text"
               bgGradient="linear(to-l, #2892C6, #C23156)"
@@ -173,7 +173,7 @@ function HomePage() {
             </Text>
           </Heading>
 
-          <Text color={"gray.500"}>
+          <Text fontSize="xl" color={"gray.500"}>
             Change the way you and your colleagues organize your projects and do
             your tasks!
           </Text>

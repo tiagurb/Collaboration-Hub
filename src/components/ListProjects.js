@@ -31,9 +31,6 @@ function ListProjects() {
         {projects.map((project) => {
           return (
             <>
-              {/* <div key={project._id}>
-              <div><Link to={`/project/${project._id}`}>{project.title}</Link></div>
-            </div> */}
 
               <Center py={6} key={project._id}>
                 <Box
@@ -71,19 +68,14 @@ function ListProjects() {
                     </Text>
                   </Box>
                   <HStack borderTop={"1px"} color="black">
-                    <Flex
-                      p={4}
+                      <Text p={4}
                       alignItems="center"
                       justifyContent={"space-between"}
                       roundedBottom={"sm"}
                       cursor={"pointer"}
-                      w="full"
-                    >
-                      <Text fontSize={"md"} fontWeight={"semibold"}>
-                        <Link to={`/project/${project._id}`}>View Tasks</Link>
+                      w="full" fontSize={"md"} fontWeight={"semibold"}>
+                        <Link to={`/project/${project._id}`} >View Tasks</Link>
                       </Text>
-                      <BsArrowUpRight />
-                    </Flex>
                   </HStack>
                 </Box>
               </Center>

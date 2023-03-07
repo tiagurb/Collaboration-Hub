@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { UserContext } from "../context/user.context";
 import { useContext } from "react";
 import React, { ReactNode } from "react";
@@ -34,21 +34,35 @@ import {
   FiChevronDown,
 } from "react-icons/fi";
 import HomeNavBar from "./HomeNavBar";
+import { AddIcon } from "@chakra-ui/icons";
+
+// const navigate = useNavigate();
+//   function handleCreateNewProject() {
+//     navigate("/project/create");
+//   }
+
+//       <button onClick={handleCreateNewProject}>Create New Project</button>
 
 const LinkItems = [
-  { name: "Home", icon: FiHome },
-  { name: "Trending", icon: FiTrendingUp },
-  { name: "Explore", icon: FiCompass },
-  { name: "Favourites", icon: FiStar },
-  { name: "Settings", icon: FiSettings },
+  { name: "Dashboard", icon: FiHome, path: "/dashboard" },
+  { name: "Create a Project", icon: AddIcon, path: "/project/create" },
+  { name: "Explore", icon: FiCompass, path: "/explore" },
+  { name: "Favourites", icon: FiStar, path: "/favourites" },
+  { name: "Settings", icon: FiSettings, path: "/settings" },
 ];
 
 export default function Navbar({ children }) {
   const { loggedUser, logout } = useContext(UserContext);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const location = useLocation();
+  const hideSideBar =
+    location.pathname === "/" ||
+    location.pathname === "/login" ||
+    location.pathname === "/signup";
+  console.log(location);
   return (
     <>
-      {loggedUser ? (
+      {loggedUser && !hideSideBar ? (
         <>
           <SidebarContent
             onClose={() => onClose}
@@ -67,7 +81,6 @@ export default function Navbar({ children }) {
               <SidebarContent onClose={onClose} />
             </DrawerContent>
           </Drawer>
-          {/* mobilenav */}
           <MobileNav onOpen={onOpen} />
           <Box ml={{ base: 0, md: 60 }} p="4">
             {children}
@@ -103,18 +116,21 @@ const SidebarContent = ({ onClose, ...rest }) => {
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
-          {link.name}
-        </NavItem>
+        <NavLink to={link.path}>
+          <NavItem key={link.name} icon={link.icon}>
+            {link.name}
+          </NavItem>
+        </NavLink>
       ))}
     </Box>
   );
 };
 
-const NavItem = ({ icon, children, ...rest }) => {
+const NavItem = ({ icon, children, path, ...rest }) => {
   return (
     <Link
-      href="#"
+      to={path}
+      exact
       style={{ textDecoration: "none" }}
       _focus={{ boxShadow: "none" }}
     >
@@ -214,36 +230,3 @@ const MobileNav = ({ onOpen, ...rest }) => {
     </Flex>
   );
 };
-
-// function Navbar() {
-//   const { loggedUser, logout } = useContext(UserContext);
-
-//   return (
-//     <>
-//       <nav>
-//         <div>
-//           {loggedUser ? (
-//             <div>
-//               <p>Welcome {loggedUser.username}</p>
-//               <div>
-//                 <NavLink to="/dashboard">Dashboard</NavLink>
-//               </div>
-//               <Button onClick={logout}>Logout</Button>
-//             </div>
-//           ) : (
-//             <>
-//               <div>
-//                 <NavLink to="/login">Login</NavLink>
-//               </div>
-//               <div>
-//                 <NavLink to="/signup">Signup</NavLink>
-//               </div>
-//             </>
-//           )}
-//         </div>
-//       </nav>
-//     </>
-//   );
-// }
-
-// export default Navbar;

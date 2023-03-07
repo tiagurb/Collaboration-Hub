@@ -56,7 +56,7 @@ function HomeNavBar() {
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Image
-            boxSize="6vh"
+            boxSize="4vh"
             src="https://res.cloudinary.com/dq8v89bym/image/upload/v1677323940/zyro-image_1_i2yqtu.png"
             alt="Pro Tasker Logo"
           />

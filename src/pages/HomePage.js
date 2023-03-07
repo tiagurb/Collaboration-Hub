@@ -371,22 +371,7 @@ function HomePage() {
           >
             © 2023 Pro Tasker. All rights reserved
           </Text>
-          <Stack direction={"row"} spacing={5}>
-            <Text>João</Text>
-            <SocialButton
-              label={"Linkedin"}
-              href={"https://www.linkedin.com/in/joaopsmesquita/"}
-            >
-              <FaLinkedin />
-            </SocialButton>
-            <Text>Tiago</Text>
-            <SocialButton
-              label={"Linkedin"}
-              href={"https://www.linkedin.com/in/tiago-barata19/"}
-            >
-              <FaLinkedin />
-            </SocialButton>
-          </Stack>
+          <Stack direction={"row"} spacing={5}></Stack>
         </Container>
       </Box>
     </>

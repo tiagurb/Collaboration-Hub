@@ -1,5 +1,5 @@
 import { Select } from "@chakra-ui/select";
-import { Button } from "@chakra-ui/react"
+import { Button, Card, CardBody, CardHeader, Center, FormControl, FormLabel, GridItem, Heading, Image, Text } from "@chakra-ui/react"
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { getTask, deleteTask } from "../api";
@@ -44,32 +44,41 @@ function TaskDetail() {
   //update status does not work
   //----------------------------------
   return task ? (
-    <>
-      <h3>{task.title}</h3>
-      <p>{task.description}</p>
-      <form onSubmit={handleSubmitForm}></form>
+    <Center>
+    <Card width="50vw">
+    <CardBody>
+    <Image src={`${task.image}`} alt={`${task.title}`} />
+      <Heading size='lg'>{task.title}</Heading>
+      <Text>{task.description}</Text>
+
+      <Center>
+      <FormControl as={GridItem} colSpan={[6, 3]} maxW={600} mt={150}>
+      <FormLabel htmlFor="status">Update the Task Status</FormLabel>
       <Select htmlFor="status" placeholder="" onChange={handleStatusChange}>
         <option value="to do">To Do</option>
         <option value="working">Working</option>
         <option html="complete">Complete</option>
       </Select>
-      <Button type="submit">Update Status</Button>
-      <form />
-      <h5>Users:</h5>
+      <Button type="submit" onClick={handleSubmitForm}>Update Status </Button>
+      </FormControl>
+      </Center>
+      {/* <h5>Users:</h5>
       {task.users.map((user) => {
         return (
           <div>
             <p>{user}</p>
           </div>
         );
-      })}
+      })} */}
       <p>Created on {task.creation}</p>
       <p>Deadline: {task.deadline}</p>
       <div>
         <Button onClick={handleUpdateTask}>Update Task</Button>
         <Button onClick={handleDeleteTask}>Delete Task</Button>
       </div>
-    </>
+      </CardBody>
+    </Card>
+    </Center>
   ) : (
     <p>Loading...</p>
   );

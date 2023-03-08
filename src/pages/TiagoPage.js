@@ -64,7 +64,7 @@ function TiagoPage() {
               Full-Stack
               <br /> Developer based <br /> in Almada
             </Heading>
-            <Text textAlign="center" w={"30vh"}>
+            <Text textAlign="center" w={[200, 300, 400]}>
               "This full-stack developer isn't just a coding machine - they're a
               dog whisperer, car restoration master, and tech guru all rolled
               into one. When they're not typing away at their keyboard, you can

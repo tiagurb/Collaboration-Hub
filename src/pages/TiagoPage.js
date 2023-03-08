@@ -51,7 +51,7 @@ function TiagoPage() {
               <Avatar
                 boxShadow="xl"
                 size="xl"
-                src="https://res.cloudinary.com/doti6zlah/image/upload/v1678293734/1674055858109_ifu6pn.jpg"
+                src="https://res.cloudinary.com/doti6zlah/image/upload/v1678297604/1666008743372_h3x0ft.jpg"
               />
               <Text fontSize="m">Tiago Barata</Text>
             </Stack>

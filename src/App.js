@@ -14,15 +14,15 @@ import Signup from "./pages/Signup";
 import TaskCreate from "./pages/TaskCreate";
 import TaskDetail from "./pages/TaskDetail";
 import TaskUpdate from "./pages/TaskUpdate";
+import Guide from "./pages/Guide";
+import JoaoPage from "./pages/JoaoPage";
+import TiagoPage from "./pages/TiagoPage";
 
 function App() {
   return (
     <div className="App">
-      <ToastContainer/>
-      <div className="overlay">
-        <Navbar /> 
-      </div>
-     
+      <ToastContainer />
+      <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/dashboard" element={<Dashboard />} />
@@ -35,6 +35,9 @@ function App() {
         <Route path="/tasks/create/:projectId" element={<TaskCreate />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/guide" element={<Guide />} />
+        <Route path="/joao" element={<JoaoPage />} />
+        <Route path="/tiago" element={<TiagoPage />} />
       </Routes>
     </div>
   );

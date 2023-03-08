@@ -253,21 +253,25 @@ const MobileNavItem = ({ label, children, href }) => {
 
 const NAV_ITEMS = [
   {
+    label: "Home",
+    href: "/",
+  },
+  {
     label: "About Us",
     children: [
       {
-        label: "João Mesquita",
-        href: "#",
+        label: "Tiago Barata",
+        href: "/tiago",
       },
       {
-        label: "Tiago Barata",
-        href: "#",
+        label: "João Mesquita",
+        href: "/joao",
       },
     ],
   },
   {
-    label: "Services",
-    href: "#",
+    label: "Guide",
+    href: "/guide",
   },
 ];
 

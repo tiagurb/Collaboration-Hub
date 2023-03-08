@@ -49,7 +49,10 @@ export default function Navbar({ children }) {
   const hideSideBar =
     location.pathname === "/" ||
     location.pathname === "/login" ||
-    location.pathname === "/signup";
+    location.pathname === "/signup" ||
+    location.pathname === "/guide" ||
+    location.pathname === "/joao" ||
+    location.pathname === "/tiago";
   console.log(location);
   return (
     <>

@@ -53,18 +53,22 @@ function TiagoPage() {
                 size="xl"
                 src="https://res.cloudinary.com/doti6zlah/image/upload/v1678297604/1666008743372_h3x0ft.jpg"
               />
-              <Text fontSize="m">Tiago Barata</Text>
+              <Text fontSize="m" color={"gray.700"}>
+                Tiago Barata
+              </Text>
             </Stack>
             <Heading
               textAlign={{ base: "center", sm: "left" }}
               margin="0 auto"
               width={{ base: "23rem", sm: "auto" }}
               fontSize={{ base: "2.5rem", sm: "3rem" }}
+              bgClip="text"
+              bgGradient="linear(to-l, #2892C6, #C23156)"
             >
               Full-Stack
               <br /> Developer based <br /> in Almada
             </Heading>
-            <Text textAlign="center" w={[200, 300, 400]}>
+            <Text textAlign="center" w={[200, 300, 400]} color={"gray.600"}>
               "This full-stack developer isn't just a coding machine - they're a
               dog whisperer, car restoration master, and tech guru all rolled
               into one. When they're not typing away at their keyboard, you can

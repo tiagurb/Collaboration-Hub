@@ -261,11 +261,11 @@ const NAV_ITEMS = [
     children: [
       {
         label: "Tiago Barata",
-        href: "https://www.linkedin.com/in/tiago-barata19/",
+        href: "/tiago",
       },
       {
         label: "João Mesquita",
-        href: "https://www.linkedin.com/in/joaopsmesquita/",
+        href: "/joao",
       },
     ],
   },

@@ -15,6 +15,8 @@ import TaskCreate from "./pages/TaskCreate";
 import TaskDetail from "./pages/TaskDetail";
 import TaskUpdate from "./pages/TaskUpdate";
 import Guide from "./pages/Guide";
+import JoaoPage from "./pages/JoaoPage";
+import TiagoPage from "./pages/TiagoPage";
 
 function App() {
   return (
@@ -34,6 +36,8 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/guide" element={<Guide />} />
+        <Route path="/joao" element={<JoaoPage />} />
+        <Route path="/tiago" element={<TiagoPage />} />
       </Routes>
     </div>
   );

@@ -14,11 +14,12 @@ import Signup from "./pages/Signup";
 import TaskCreate from "./pages/TaskCreate";
 import TaskDetail from "./pages/TaskDetail";
 import TaskUpdate from "./pages/TaskUpdate";
+import Guide from "./pages/Guide";
 
 function App() {
   return (
     <div className="App">
-      <ToastContainer/>
+      <ToastContainer />
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -32,6 +33,7 @@ function App() {
         <Route path="/tasks/create/:projectId" element={<TaskCreate />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/guide" element={<Guide />} />
       </Routes>
     </div>
   );

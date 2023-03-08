@@ -260,18 +260,18 @@ const NAV_ITEMS = [
     label: "About Us",
     children: [
       {
-        label: "João Mesquita",
-        href: "#",
+        label: "Tiago Barata",
+        href: "https://www.linkedin.com/in/tiago-barata19/",
       },
       {
-        label: "Tiago Barata",
-        href: "#",
+        label: "João Mesquita",
+        href: "https://www.linkedin.com/in/joaopsmesquita/",
       },
     ],
   },
   {
-    label: "Services",
-    href: "#",
+    label: "Guide",
+    href: "/guide",
   },
 ];
 

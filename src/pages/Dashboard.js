@@ -11,7 +11,6 @@ function Dashboard() {
     <div ml={{xl: 500}}>
       
       <ListProjects />
-      <button onClick={handleCreateNewProject}>Create New Project</button>
 
     </div>
   );

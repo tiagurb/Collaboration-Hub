@@ -43,8 +43,6 @@ import { AddIcon, SmallAddIcon } from "@chakra-ui/icons";
 
 //       <button onClick={handleCreateNewProject}>Create New Project</button>
 
-
-
 const LinkItems = [
   { name: "Dashboard", icon: FiHome, path: "/dashboard" },
   { name: "Create a Project", icon: SmallAddIcon, path: "/project/create" },
@@ -59,8 +57,9 @@ export default function Navbar({ children }) {
   const hideSideBar =
     location.pathname === "/" ||
     location.pathname === "/login" ||
-    location.pathname === "/signup";
-  console.log(location);
+    location.pathname === "/signup" ||
+    location.pathname === "/guide" ||
+    console.log(location);
   return (
     <>
       {loggedUser && !hideSideBar ? (

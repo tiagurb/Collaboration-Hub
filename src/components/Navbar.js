@@ -59,7 +59,9 @@ export default function Navbar({ children }) {
     location.pathname === "/login" ||
     location.pathname === "/signup" ||
     location.pathname === "/guide" ||
-    console.log(location);
+    location.pathname === "/joao" ||
+    location.pathname === "/tiago";
+  console.log(location);
   return (
     <>
       {loggedUser && !hideSideBar ? (

@@ -68,7 +68,12 @@ function ProjectCreate() {
             type="file"
             onChange={handleImageChange}
           />
-          <Button type="submit" onClick={handleSubmitForm} mt={50} className="formBtn">
+          <Button
+            type="submit"
+            onClick={handleSubmitForm}
+            mt={50}
+            className="formBtn"
+          >
             Create Project
           </Button>
         </FormControl>

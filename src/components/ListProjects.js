@@ -26,7 +26,7 @@ function ListProjects() {
 
   return projects ? (
     <>
-      <h3>Projects</h3>
+      <Heading size="lg" fontSize="50px" mb="10">Projects</Heading>
       <ul>
         {projects.map((project) => {
           return (

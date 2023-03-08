@@ -69,11 +69,7 @@ function TaskCreate() {
   return (
     <>
       <Center>
-        <FormControl as={GridItem}
-          colSpan={[6, 3]}
-          maxW={600}
-          mt={150}>
-          <Flex wrap="wrap">
+        <FormControl as={GridItem} colSpan={[6, 3]} maxW={600} mt={150}>
             <FormLabel htmlFor="title">Title</FormLabel>
             <Input
               maxW="60vw"
@@ -88,20 +84,18 @@ function TaskCreate() {
               type="text"
               onChange={handleDescriptionChange}
             />
+            <FormLabel htmlFor="deadline">Deadline</FormLabel>
+            <Input id="deadline" type="date" onChange={handleDeadlineChange} />
             <FormLabel htmlFor="image">Image</FormLabel>
-            <Input
+            <input
               id="image"
               name="filename"
               type="file"
               onChange={handleImageChange}
             />
-            <FormLabel htmlFor="deadline">Deadline</FormLabel>
-            <Input id="deadline" type="date" onChange={handleDeadlineChange} />
-
             <Button type="submit" onClick={handleSubmitForm}>
               Create Task
             </Button>
-          </Flex>
         </FormControl>
       </Center>
     </>

@@ -73,7 +73,6 @@ function ProjectDetail() {
                       <Text>
                         Deadline: {new Date(task.deadline).toLocaleDateString()}
                       </Text>
-                      <Text>Task Owners: {task.users}</Text>
                     </CardBody>
                     <CardFooter>
                       <Button>
@@ -112,7 +111,6 @@ function ProjectDetail() {
                       <Text>
                         Deadline: {new Date(task.deadline).toLocaleDateString()}
                       </Text>
-                      <Text>Task Owners: {task.users}</Text>
                     </CardBody>
                     <CardFooter>
                       <Button>
@@ -153,7 +151,6 @@ function ProjectDetail() {
                           Deadline:{" "}
                           {new Date(task.deadline).toLocaleDateString()}
                         </Text>
-                        <Text>Task Owners: {task.users}</Text>
                       </CardBody>
                       <CardFooter>
                         <Button>

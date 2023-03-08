@@ -41,15 +41,15 @@ function ProjectDetail() {
     navigate(`/tasks/create/${project._id}`);
   }
 
-  
-
   return project ? (
-    <>
+
+    //--- a margin é inserida aqui abaixo, pelos meus testes 300px é bacano
+    <div margin-left={[null, null, null, 300, 300]}>
       <Heading size="lg" fontSize="50px" mb="10">
         {project.title}
       </Heading>
-      <div className="taskList">
-        <div>
+      <SimpleGrid columns={[1, null, 3]} spacing="40px">
+        <Box>
           <Heading lineHeight="tall">
             <Highlight
               query="To Do"
@@ -61,6 +61,7 @@ function ProjectDetail() {
           <SimpleGrid
             spacing={4}
             templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
+            columns={1}
           >
             {project.tasks.map((task) => {
               return (
@@ -85,9 +86,9 @@ function ProjectDetail() {
               );
             })}
           </SimpleGrid>
-        </div>
+        </Box>
 
-        <div>
+        <Box>
           <Heading lineHeight="tall">
             <Highlight
               query="Working"
@@ -99,6 +100,7 @@ function ProjectDetail() {
           <SimpleGrid
             spacing={4}
             templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
+            columns={1}
           >
             {project.tasks.map((task) => {
               return (
@@ -123,9 +125,9 @@ function ProjectDetail() {
               );
             })}
           </SimpleGrid>
-        </div>
+        </Box>
 
-        <div>
+        <Box>
           <Heading lineHeight="tall">
             <Highlight
               query="Complete"
@@ -137,39 +139,43 @@ function ProjectDetail() {
           <SimpleGrid
             spacing={4}
             templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
+            columns={1}
           >
             {project.tasks.map((task) => {
               return (
                 task.status === "complete" && (
-                  <Card align="center">
-                    <CardHeader>
-                      <Heading size="md"> {task.title} </Heading>
-                    </CardHeader>
-                    <CardBody>
-                      <Text>
-                        Deadline: {new Date(task.deadline).toLocaleDateString()}
-                      </Text>
-                      <Text>Task Owners: {task.users}</Text>
-                    </CardBody>
-                    <CardFooter>
-                      <Button>
-                        <Link to={`/tasks/${task._id}`}>See Details</Link>
-                      </Button>
-                    </CardFooter>
-                  </Card>
+                  <Box>
+                    <Card align="center">
+                      <CardHeader>
+                        <Heading size="md"> {task.title} </Heading>
+                      </CardHeader>
+                      <CardBody>
+                        <Text>
+                          Deadline:{" "}
+                          {new Date(task.deadline).toLocaleDateString()}
+                        </Text>
+                        <Text>Task Owners: {task.users}</Text>
+                      </CardBody>
+                      <CardFooter>
+                        <Button>
+                          <Link to={`/tasks/${task._id}`}>See Details</Link>
+                        </Button>
+                      </CardFooter>
+                    </Card>
+                  </Box>
                 )
               );
             })}
           </SimpleGrid>
-        </div>
-      </div>
+        </Box>
+      </SimpleGrid>
       <div>
         <Button onClick={handleCreateTask}>Create a new Task</Button>
       </div>
       <div>
         <Button onClick={handleDeleteProject}>Delete Project</Button>
       </div>
-    </>
+    </div>
   ) : (
     <p>Loading...</p>
   );

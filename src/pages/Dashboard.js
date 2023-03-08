@@ -8,12 +8,12 @@ function Dashboard() {
     navigate("/project/create");
   }
   return (
-    <>
+    <div ml={{xl: 500}}>
       
       <ListProjects />
       <button onClick={handleCreateNewProject}>Create New Project</button>
 
-    </>
+    </div>
   );
 }
 

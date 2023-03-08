@@ -36,20 +36,10 @@ import {
 import HomeNavBar from "./HomeNavBar";
 import { AddIcon, SmallAddIcon } from "@chakra-ui/icons";
 
-// const navigate = useNavigate();
-//   function handleCreateNewProject() {
-//     navigate("/project/create");
-//   }
-
-//       <button onClick={handleCreateNewProject}>Create New Project</button>
-
-
-
 const LinkItems = [
   { name: "Dashboard", icon: FiHome, path: "/dashboard" },
-  { name: "Create a Project", icon: SmallAddIcon, path: "/project/create" },
-  { name: "Create a Task", icon: AddIcon, path: "/explore" },
-  { name: "Settings", icon: FiSettings, path: "/settings" },
+  { name: "Create a Project", icon: AddIcon, path: "/project/create" },
+  { name: "User information", icon: FiSettings, path: "/settings" },
 ];
 
 export default function Navbar({ children }) {

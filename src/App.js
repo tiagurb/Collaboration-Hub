@@ -19,7 +19,10 @@ function App() {
   return (
     <div className="App">
       <ToastContainer/>
-      <Navbar />
+      <div className="overlay">
+        <Navbar /> 
+      </div>
+     
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/dashboard" element={<Dashboard />} />

@@ -43,8 +43,7 @@ function ProjectDetail() {
 
   return project ? (
 
-    //--- a margin é inserida aqui abaixo, pelos meus testes 300px é bacano
-    <div margin-left={[null, null, null, 300, 300]}>
+    <Box ml={[null, null, 300, 300]}>
       <Heading size="lg" fontSize="50px" mb="10">
         {project.title}
       </Heading>
@@ -175,7 +174,7 @@ function ProjectDetail() {
       <div>
         <Button onClick={handleDeleteProject}>Delete Project</Button>
       </div>
-    </div>
+    </Box>
   ) : (
     <p>Loading...</p>
   );

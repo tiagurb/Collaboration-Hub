@@ -51,7 +51,7 @@ function TiagoPage() {
               <Avatar
                 boxShadow="xl"
                 size="xl"
-                src="https://res.cloudinary.com/doti6zlah/image/upload/v1678293734/1674055858109_ifu6pn.jpg"
+                src="https://res.cloudinary.com/doti6zlah/image/upload/v1678297604/1666008743372_h3x0ft.jpg"
               />
               <Text fontSize="m">Tiago Barata</Text>
             </Stack>
@@ -64,7 +64,7 @@ function TiagoPage() {
               Full-Stack
               <br /> Developer based <br /> in Almada
             </Heading>
-            <Text textAlign="center" w={"100vh"}>
+            <Text textAlign="center" w={[200, 300, 400]}>
               "This full-stack developer isn't just a coding machine - they're a
               dog whisperer, car restoration master, and tech guru all rolled
               into one. When they're not typing away at their keyboard, you can

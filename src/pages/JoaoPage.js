@@ -15,6 +15,7 @@ import {
 } from "@chakra-ui/react";
 
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import Footer from "../components/Footer";
 
 function JoaoPage() {
   const iconProps = {
@@ -98,6 +99,7 @@ function JoaoPage() {
           </VStack>
         </Center>
       </Container>
+      <Footer />
     </>
   );
 }

@@ -15,6 +15,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import Footer from "../components/Footer";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -85,17 +86,26 @@ function Login() {
                   align={"start"}
                   justify={"space-between"}
                 >
+                  <Text>Don't have an account?</Text>
                   <Link to="/signup" color={"blue.400"}>
-                    Create a new account
+                    <Button
+                      as={"a"}
+                      fontSize={"md"}
+                      color={"#3172CE"}
+                      fontWeight={700}
+                      variant={"link"}
+                    >
+                      Sign Up
+                    </Button>
                   </Link>
                 </Stack>
                 <Button
                   type="submit"
                   onClick={handleSubmitForm}
-                  bg={"blue.400"}
+                  bg={"#5476A6"}
                   color={"white"}
                   _hover={{
-                    bg: "blue.500",
+                    bg: "#348ABC",
                   }}
                 >
                   Sign in
@@ -105,6 +115,7 @@ function Login() {
           </Box>
         </Stack>
       </Flex>
+      <Footer />
     </>
   );
 }

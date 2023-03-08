@@ -15,6 +15,7 @@ import {
 } from "@chakra-ui/react";
 
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import Footer from "../components/Footer";
 
 function TiagoPage() {
   const iconProps = {
@@ -99,6 +100,7 @@ function TiagoPage() {
           </VStack>
         </Center>
       </Container>
+      <Footer />
     </>
   );
 }

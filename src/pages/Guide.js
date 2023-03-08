@@ -10,6 +10,7 @@ import {
   Image,
   Box,
 } from "@chakra-ui/react";
+import Footer from "../components/Footer";
 
 function Guide() {
   const overviewList = [
@@ -105,6 +106,7 @@ function Guide() {
           />
         </Stack>
       </Container>
+      <Footer />
     </>
   );
 }

@@ -64,7 +64,7 @@ function JoaoPage() {
               Full-Stack
               <br /> Developer based <br /> in Lisbon
             </Heading>
-            <Text textAlign="center" w={"100vh"}>
+            <Text textAlign="center" w={"30vh"}>
               "Who says you can't have it all? This full-stack developer can
               write code, lift weights, rock out to some tunes, and binge-watch
               TV shows like a pro. With a passion for tech and a love for

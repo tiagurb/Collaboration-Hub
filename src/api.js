@@ -28,8 +28,8 @@ export const getTask = (id) => {
   return axios.get(`${BASE_URL}/tasks/${id}`);
 };
 
-export const updateTask = (id) => {
-  return axios.put(`${BASE_URL}/tasks/${id}`);
+export const updateTask = (id, task) => {
+  return axios.put(`${BASE_URL}/tasks/update/${id}`, task);
 };
 
 export const createTask = (task, projectId) => {

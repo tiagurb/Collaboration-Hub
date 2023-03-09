@@ -58,7 +58,7 @@ function TaskUpdate() {
 
     //2. Once we get the image Url -> create a project
     //with title, description and imageUrl
-    await updateTask({
+    await updateTask(taskId, {
       title,
       description,
       deadline,
@@ -66,7 +66,7 @@ function TaskUpdate() {
     });
 
     toast.success("Task updated");
-    navigate(`/tasks/${task.id}`);
+    navigate(`/tasks/${taskId}`);
   }
 
   return (

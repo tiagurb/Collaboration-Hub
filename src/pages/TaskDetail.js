@@ -49,7 +49,7 @@ function TaskDetail() {
   async function handleSubmitForm(event) {
     event.preventDefault();
     const updatedTask = { ...task, status }; // create a new task object with updated status
-    await updateTaskStatus(updatedTask); // call the updateTask API function with the updated task
+    await updateTaskStatus(updatedTask._id, updatedTask); // call the updateTask API function with the updated task
     setTask(updatedTask); // update the task state with the updated task object
     navigate("/dashboard");
   }
@@ -73,7 +73,7 @@ function TaskDetail() {
               >
                 <option value="to do">To Do</option>
                 <option value="working">Working</option>
-                <option html="complete">Complete</option>
+                <option value="complete">Complete</option>
               </Select>
               <Button type="submit" onClick={handleSubmitForm}>
                 Update Status{" "}

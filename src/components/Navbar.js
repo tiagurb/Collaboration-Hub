@@ -161,6 +161,7 @@ const NavItem = ({ icon, children, path, ...rest }) => {
 };
 
 const MobileNav = ({ onOpen, ...rest }) => {
+  const { logout } = useContext(UserContext);
   return (
     <Flex
       ml={{ base: 0, md: 60 }}
@@ -219,7 +220,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
               bg={useColorModeValue("white", "gray.900")}
               borderColor={useColorModeValue("gray.200", "gray.700")}
             >
-              <MenuItem>Sign out</MenuItem>
+              <MenuItem onClick={logout}>Sign out</MenuItem>
             </MenuList>
           </Menu>
         </Flex>

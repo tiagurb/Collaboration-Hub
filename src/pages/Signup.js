@@ -46,7 +46,7 @@ function Signup() {
       if (response.data.message) {
         toast.info(response.data.message);
       } else {
-        toast.success("User created");
+        toast.success("You created a new account!");
       }
       navigate("/login");
     } catch (e) {

@@ -51,13 +51,21 @@ function TaskDetail() {
     const updatedTask = { ...task, status }; // create a new task object with updated status
     await updateTask(updatedTask); // call the updateTask API function with the updated task
     setTask(updatedTask); // update the task state with the updated task object
+    navigate("/dashboard");
   }
   //--------------------------------
   //update status does not work
   //----------------------------------
   return task ? (
     <Center>
-      <Card width="50vw">
+      <Card
+        width="50vw"
+        _hover={{
+          boxShadow:
+            ("0 4px 6px rgba(160, 174, 192, 0.6)",
+            "0 4px 6px rgba(9, 17, 28, 0.4)"),
+        }}
+      >
         <CardBody>
           <Image src={`${task.image}`} alt={`${task.title}`} />
           <Heading size="lg">{task.title}</Heading>

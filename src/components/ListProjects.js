@@ -26,12 +26,13 @@ function ListProjects() {
 
   return projects ? (
     <>
-      <Heading size="lg" fontSize="50px" mb="10">Projects</Heading>
+      <Heading size="lg" fontSize="50px" mb="10">
+        Projects
+      </Heading>
       <ul>
         {projects.map((project) => {
           return (
             <>
-
               <Center py={6} key={project._id}>
                 <Box
                   w="xs"
@@ -66,14 +67,18 @@ function ListProjects() {
                     </Text>
                   </Box>
                   <HStack borderTop={"1px"} color="black">
-                      <Text p={4}
+                    <Text
+                      p={4}
                       alignItems="center"
                       justifyContent={"space-between"}
                       roundedBottom={"sm"}
                       cursor={"pointer"}
-                      w="full" fontSize={"md"} fontWeight={"semibold"}>
-                        <Link to={`/project/${project._id}`} >View Tasks</Link>
-                      </Text>
+                      w="full"
+                      fontSize={"md"}
+                      fontWeight={"semibold"}
+                    >
+                      <Link to={`/project/${project._id}`}>View Tasks</Link>
+                    </Text>
                   </HStack>
                 </Box>
               </Center>

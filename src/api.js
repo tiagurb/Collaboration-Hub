@@ -32,6 +32,10 @@ export const updateTask = (id, task) => {
   return axios.put(`${BASE_URL}/tasks/update/${id}`, task);
 };
 
+export const updateTaskStatus = (id, task) => {
+  return axios.put(`${BASE_URL}/tasks/status/${id}`, task);
+};
+
 export const createTask = (task, projectId) => {
   return axios.post(`${BASE_URL}/tasks/create/${projectId}`, task);
 };

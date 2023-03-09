@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import { getTask, deleteTask } from "../api";
+import { getTask, deleteTask, updateTaskStatus } from "../api";
 import TaskCreate from "./TaskCreate";
 import { updateTask } from "../api";
 
@@ -49,7 +49,7 @@ function TaskDetail() {
   async function handleSubmitForm(event) {
     event.preventDefault();
     const updatedTask = { ...task, status }; // create a new task object with updated status
-    await updateTask(updatedTask); // call the updateTask API function with the updated task
+    await updateTaskStatus(updatedTask); // call the updateTask API function with the updated task
     setTask(updatedTask); // update the task state with the updated task object
     navigate("/dashboard");
   }

@@ -46,11 +46,29 @@ function Signup() {
       if (response.data.message) {
         toast.info(response.data.message);
       } else {
-        toast.success("You created a new account!");
+        toast.success("You created a new account!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
       }
       navigate("/login");
     } catch (e) {
-      toast.error("Error occurred", e);
+      toast.error("Error occurred", e, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     }
   }
 

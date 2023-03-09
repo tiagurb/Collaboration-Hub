@@ -38,10 +38,28 @@ function Login() {
       localStorage.setItem("authToken", response.data);
       // Setting the loged user in the context
       authenticateUser();
-      toast.success("You are logged in!");
+      toast.success("You are logged in!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
       navigate("/dashboard");
     } catch (e) {
-      toast.error("Error occurred", e);
+      toast.error("Error occurred", e, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     }
   }
 

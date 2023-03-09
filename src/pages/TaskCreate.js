@@ -39,17 +39,6 @@ function TaskCreate() {
   }
 
   async function handleSubmitForm() {
-    console.log({ title, description, deadline });
-
-    //1. Upload the image through the backend
-
-    const uploadData = new FormData();
-    uploadData.append("filename", image);
-    console.log();
-    let response = null;
-    if (uploadData["filename"]) {
-      response = await uploadImage(uploadData);
-    }
 
     //2. Once we get the image Url -> create a project
     //with title, description and imageUrl
@@ -58,7 +47,6 @@ function TaskCreate() {
         title,
         description,
         deadline,
-        imageUrl: response ? response.data.fileUrl : "",
       },
       projectId
     );
@@ -91,13 +79,6 @@ function TaskCreate() {
           />
           <FormLabel htmlFor="deadline">Deadline</FormLabel>
           <Input id="deadline" type="date" onChange={handleDeadlineChange} />
-          <FormLabel htmlFor="image">Image</FormLabel>
-          <input
-            id="image"
-            name="filename"
-            type="file"
-            onChange={handleImageChange}
-          />
           <Button type="submit" onClick={handleSubmitForm}>
             Create Task
           </Button>

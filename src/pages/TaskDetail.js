@@ -60,7 +60,6 @@ function TaskDetail() {
     <Center>
       <Card width="50vw">
         <CardBody>
-          <Image src={`${task.image}`} alt={`${task.title}`} />
           <Heading size="lg">{task.title}</Heading>
           <Text>{task.description}</Text>
 
@@ -81,14 +80,6 @@ function TaskDetail() {
               </Button>
             </FormControl>
           </Center>
-          {/* <h5>Users:</h5>
-      {task.users.map((user) => {
-        return (
-          <div>
-            <p>{user}</p>
-          </div>
-        );
-      })} */}
           <p>Created on {new Date(task.creation).toLocaleDateString()}</p>
           <p>Deadline: {new Date(task.deadline).toLocaleDateString()}</p>
           <div>

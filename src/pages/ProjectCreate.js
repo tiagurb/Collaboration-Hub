@@ -27,23 +27,19 @@ function ProjectCreate() {
     setDescription(event.target.value);
   }
 
-  function handleImageChange(event) {
+  async function handleImageChange(event) {
     setImage(event.target.files[0]);
   }
 
   async function handleSubmitForm() {
     const uploadData = new FormData();
     uploadData.append("filename", image);
-    console.log();
-    let response = null;
-    if (uploadData["filename"]) {
-      response = await uploadImage(uploadData);
-    }
-
+    const response = await uploadImage(uploadData);
+    console.log(response.data.fileUrl);
     await createProject({
       title,
       description,
-      imageUrl: response ? response.data.fileUrl : "",
+      image: response.data.fileUrl,
     });
 
     toast.success("Project created");

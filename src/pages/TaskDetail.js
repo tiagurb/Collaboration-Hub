@@ -88,8 +88,8 @@ function TaskDetail() {
           </div>
         );
       })} */}
-          <p>Created on {task.creation.toLocaleDateString()}</p>
-          <p>Deadline: {task.deadline.toLocaleDateString()}</p>
+          <p>Created on {new Date(task.creation).toLocaleDateString()}</p>
+          <p>Deadline: {new Date(task.deadline).toLocaleDateString()}</p>
           <div>
             <Button onClick={handleUpdateTask}>Update Task</Button>
             <Button onClick={handleDeleteTask}>Delete Task</Button>

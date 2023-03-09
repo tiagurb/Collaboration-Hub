@@ -161,7 +161,8 @@ const NavItem = ({ icon, children, path, ...rest }) => {
 };
 
 const MobileNav = ({ onOpen, ...rest }) => {
-  const { logout } = useContext(UserContext);
+  const { loggedUser, logout } = useContext(UserContext);
+
   return (
     <Flex
       ml={{ base: 0, md: 60 }}
@@ -209,7 +210,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
                   spacing="1px"
                   ml="2"
                 >
-                  <Text fontSize="sm">Username</Text>
+                  <Text fontSize="sm">{loggedUser.username}</Text>
                 </VStack>
                 <Box display={{ base: "none", md: "flex" }}>
                   <FiChevronDown />

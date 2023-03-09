@@ -74,7 +74,7 @@ function ProjectDetail() {
                       </Text>
                     </CardBody>
                     <CardFooter>
-                      <Button variant="ghost">
+                      <Button variantColor="#2892C6" variant="outline">
                         <Link to={`/tasks/${task._id}`}>See Details</Link>
                       </Button>
                     </CardFooter>
@@ -112,7 +112,7 @@ function ProjectDetail() {
                       </Text>
                     </CardBody>
                     <CardFooter>
-                      <Button variant="ghost">
+                      <Button variantColor="#2892C6" variant="outline">
                         <Link to={`/tasks/${task._id}`}>See Details</Link>
                       </Button>
                     </CardFooter>
@@ -152,7 +152,7 @@ function ProjectDetail() {
                         </Text>
                       </CardBody>
                       <CardFooter>
-                        <Button variant="ghost">
+                        <Button variantColor="#2892C6" variant="outline">
                           <Link to={`/tasks/${task._id}`}>See Details</Link>
                         </Button>
                       </CardFooter>

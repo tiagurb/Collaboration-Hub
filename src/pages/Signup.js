@@ -18,6 +18,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import Footer from "../components/Footer";
 
 function Signup() {
   const [email, setEmail] = useState("");
@@ -119,10 +120,10 @@ function Signup() {
                   onClick={handleSubmitForm}
                   loadingText="Submitting"
                   size="lg"
-                  bg={"blue.400"}
+                  bg={"#5476A6"}
                   color={"white"}
                   _hover={{
-                    bg: "blue.500",
+                    bg: "#348ABC",
                   }}
                 >
                   Sign up
@@ -132,7 +133,15 @@ function Signup() {
                 <Text align={"center"}>
                   Already a user?{" "}
                   <Link to="/login" color={"blue.400"}>
-                    Login
+                    <Button
+                      as={"a"}
+                      fontSize={"md"}
+                      color={"#3172CE"}
+                      fontWeight={700}
+                      variant={"link"}
+                    >
+                      Login
+                    </Button>
                   </Link>
                 </Text>
               </Stack>
@@ -140,6 +149,7 @@ function Signup() {
           </Box>
         </Stack>
       </Flex>
+      <Footer />
     </>
   );
 }

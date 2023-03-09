@@ -14,16 +14,16 @@ function ListTask() {
     handleGetAllTasks();
   }, []);
 
-
-
   return (
     <>
       <h3>Tasks</h3>
       <ul>
-        {tasks.map((task) => { 
+        {tasks.map((task) => {
           return (
             <div key={task._id}>
-              <div><Link to={`/tasks/${task._id}`}>{task.title}</Link></div>
+              <div>
+                <Link to={`/tasks/${task._id}`}>{task.title}</Link>
+              </div>
             </div>
           );
         })}

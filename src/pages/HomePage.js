@@ -20,9 +20,7 @@ import { Link } from "react-router-dom";
 import { FcApproval, FcViewDetails, FcBullish, FcLeave } from "react-icons/fc";
 
 import { Avatar } from "@chakra-ui/react";
-
-import { chakra, VisuallyHidden } from "@chakra-ui/react";
-import { FaLinkedin } from "react-icons/fa";
+import Footer from "../components/Footer";
 
 const Testimonial = ({ children }) => {
   return <Box>{children}</Box>;
@@ -108,41 +106,6 @@ const Feature = ({ text, icon, iconBg }) => {
       </Flex>
       <Text fontWeight={600}>{text}</Text>
     </Stack>
-  );
-};
-
-const Logo = () => {
-  return (
-    <img
-      src="https://res.cloudinary.com/dq8v89bym/image/upload/v1677323940/zyro-image_1_i2yqtu.png"
-      alt="pro tasker logo"
-      width="50"
-      height="70"
-    />
-  );
-};
-
-const SocialButton = ({ children, label, href }) => {
-  return (
-    <chakra.button
-      bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
-      rounded={"full"}
-      w={8}
-      h={8}
-      cursor={"pointer"}
-      as={"a"}
-      href={href}
-      display={"inline-flex"}
-      alignItems={"center"}
-      justifyContent={"center"}
-      transition={"background 0.3s ease"}
-      _hover={{
-        bg: useColorModeValue("blackAlpha.200", "whiteAlpha.200"),
-      }}
-    >
-      <VisuallyHidden>{label}</VisuallyHidden>
-      {children}
-    </chakra.button>
   );
 };
 
@@ -281,7 +244,7 @@ function HomePage() {
               rounded={"md"}
               alt={"feature image"}
               src={
-                "https://images.unsplash.com/photo-1554200876-56c2f25224fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                "https://res.cloudinary.com/doti6zlah/image/upload/v1678302541/10780607_19199196_mthqmd.jpg"
               }
               objectFit={"cover"}
             />
@@ -353,26 +316,7 @@ function HomePage() {
         bg={useColorModeValue("gray.50", "gray.900")}
         color={useColorModeValue("gray.700", "gray.200")}
       >
-        <Container
-          as={Stack}
-          maxW={"9xl"}
-          py={4}
-          direction={{ base: "column", md: "row" }}
-          spacing={4}
-          justify={{ base: "center", md: "space-between" }}
-          align={{ base: "center", md: "center" }}
-        >
-          <Logo />
-          <Text
-            bgGradient="linear(to-l, #2892C6, #C23156)"
-            bgClip="text"
-            fontSize="1xl"
-            fontWeight="extrabold"
-          >
-            © 2023 Pro Tasker. All rights reserved
-          </Text>
-          <Stack direction={"row"} spacing={5}></Stack>
-        </Container>
+        <Footer />
       </Box>
     </>
   );

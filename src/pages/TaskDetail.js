@@ -48,9 +48,9 @@ function TaskDetail() {
 
   async function handleSubmitForm(event) {
     event.preventDefault();
-    await updateTask({
-      status,
-    });
+    const updatedTask = { ...task, status }; // create a new task object with updated status
+    await updateTask(updatedTask); // call the updateTask API function with the updated task
+    setTask(updatedTask); // update the task state with the updated task object
   }
   //--------------------------------
   //update status does not work

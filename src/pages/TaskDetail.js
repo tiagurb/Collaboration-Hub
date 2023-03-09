@@ -58,14 +58,7 @@ function TaskDetail() {
   //----------------------------------
   return task ? (
     <Center>
-      <Card
-        width="50vw"
-        _hover={{
-          boxShadow:
-            ("0 4px 6px rgba(160, 174, 192, 0.6)",
-            "0 4px 6px rgba(9, 17, 28, 0.4)"),
-        }}
-      >
+      <Card width="50vw">
         <CardBody>
           <Image src={`${task.image}`} alt={`${task.title}`} />
           <Heading size="lg">{task.title}</Heading>

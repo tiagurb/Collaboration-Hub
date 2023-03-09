@@ -64,7 +64,15 @@ function ProjectDetail() {
             {project.tasks.map((task) => {
               return (
                 task.status === "to do" && (
-                  <Card align="center" styles={{ backgroundColor: "#FFFFFF" }}>
+                  <Card
+                    align="center"
+                    styles={{ backgroundColor: "#FFFFFF" }}
+                    _hover={{
+                      boxShadow:
+                        ("0 4px 6px rgba(160, 174, 192, 0.6)",
+                        "0 4px 6px rgba(9, 17, 28, 0.4)"),
+                    }}
+                  >
                     <CardHeader>
                       <Heading size="md"> {task.title} </Heading>
                     </CardHeader>

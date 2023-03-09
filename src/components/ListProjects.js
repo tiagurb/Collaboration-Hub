@@ -26,7 +26,14 @@ function ListProjects() {
 
   return projects ? (
     <>
-      <Heading size="lg" fontSize="50px" mb="10">
+      <Heading
+        size="3xl"
+        mb="30"
+        pb={"25"}
+        bgClip="text"
+        bgGradient="linear(to-l, #2892C6, #C23156)"
+        as="extrabold"
+      >
         Projects
       </Heading>
       <ul>

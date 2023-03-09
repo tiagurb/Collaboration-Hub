@@ -42,7 +42,6 @@ function ProjectDetail() {
   }
 
   return project ? (
-
     <Box ml={[null, null, 300, 300]}>
       <Heading size="lg" fontSize="50px" mb="10">
         {project.title}
@@ -153,7 +152,7 @@ function ProjectDetail() {
                         </Text>
                       </CardBody>
                       <CardFooter>
-                        <Button>
+                        <Button variant="ghost">
                           <Link to={`/tasks/${task._id}`}>See Details</Link>
                         </Button>
                       </CardFooter>

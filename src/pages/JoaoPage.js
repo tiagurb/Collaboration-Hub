@@ -14,6 +14,8 @@ import {
   Center,
 } from "@chakra-ui/react";
 
+import { motion } from "framer-motion";
+
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Footer from "../components/Footer";
 
@@ -49,11 +51,20 @@ function JoaoPage() {
             alignItems={{ base: "center", sm: "flex-start" }}
           >
             <Stack justifyContent="center" alignItems="center">
-              <Avatar
-                boxShadow="xl"
-                size="xl"
-                src="https://res.cloudinary.com/doti6zlah/image/upload/v1678292697/Jo%C3%A3o_Mesquita_Out_2021_-_18_cepkgg.jpg"
-              />
+              <motion.div whileHover={{ y: -5, scale: 1.1 }}>
+                <Box
+                  boxShadow="xl"
+                  _hover={{ boxShadow: "lg" }}
+                  borderRadius="full"
+                >
+                  <Avatar
+                    _groupHover={{ width: "5rem", height: "5rem" }}
+                    boxShadow="xl"
+                    size="xl"
+                    src="https://res.cloudinary.com/doti6zlah/image/upload/v1678292697/Jo%C3%A3o_Mesquita_Out_2021_-_18_cepkgg.jpg"
+                  />
+                </Box>
+              </motion.div>
               <Text fontSize="m" color={"gray.700"}>
                 João Mesquita
               </Text>

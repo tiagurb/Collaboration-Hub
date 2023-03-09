@@ -14,6 +14,8 @@ import {
   Center,
 } from "@chakra-ui/react";
 
+import { motion } from "framer-motion";
+
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Footer from "../components/Footer";
 
@@ -49,11 +51,20 @@ function TiagoPage() {
             alignItems={{ base: "center", sm: "flex-start" }}
           >
             <Stack justifyContent="center" alignItems="center">
-              <Avatar
-                boxShadow="xl"
-                size="xl"
-                src="https://res.cloudinary.com/doti6zlah/image/upload/v1678297604/1666008743372_h3x0ft.jpg"
-              />
+              <motion.div whileHover={{ y: -5, scale: 1.1 }}>
+                <Box
+                  boxShadow="xl"
+                  _hover={{ boxShadow: "lg" }}
+                  borderRadius="full"
+                >
+                  <Avatar
+                    _groupHover={{ width: "5rem", height: "5rem" }}
+                    boxShadow="xl"
+                    size="xl"
+                    src="https://res.cloudinary.com/doti6zlah/image/upload/v1678297604/1666008743372_h3x0ft.jpg"
+                  />
+                </Box>
+              </motion.div>
               <Text fontSize="m" color={"gray.700"}>
                 Tiago Barata
               </Text>

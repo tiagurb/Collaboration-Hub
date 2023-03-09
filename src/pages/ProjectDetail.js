@@ -70,7 +70,12 @@ function ProjectDetail() {
                     </CardHeader>
                     <CardBody>
                       <Text>
-                        Deadline: {new Date(task.deadline).toLocaleDateString()}
+                        Deadline:{" "}
+                        {new Date(task.deadline).toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "2-digit",
+                          day: "2-digit",
+                        })}
                       </Text>
                     </CardBody>
                     <CardFooter>
@@ -108,7 +113,12 @@ function ProjectDetail() {
                     </CardHeader>
                     <CardBody>
                       <Text>
-                        Deadline: {new Date(task.deadline).toLocaleDateString()}
+                        Deadline:{" "}
+                        {new Date(task.deadline).toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "2-digit",
+                          day: "2-digit",
+                        })}
                       </Text>
                     </CardBody>
                     <CardFooter>
@@ -148,7 +158,11 @@ function ProjectDetail() {
                       <CardBody>
                         <Text>
                           Deadline:{" "}
-                          {new Date(task.deadline).toLocaleDateString()}
+                          {new Date(task.deadline).toLocaleDateString("en-US", {
+                            year: "numeric",
+                            month: "2-digit",
+                            day: "2-digit",
+                          })}
                         </Text>
                       </CardBody>
                       <CardFooter>

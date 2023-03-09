@@ -1,3 +1,12 @@
+import {
+  Button,
+  Center,
+  FormControl,
+  FormLabel,
+  GridItem,
+  Heading,
+  Input,
+} from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -6,7 +15,6 @@ import { updateTask, getTask, uploadImage } from "../api";
 function TaskUpdate() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [steps, setSteps] = useState("");
   const [image, setImage] = useState("");
   const [deadline, setDeadline] = useState(0);
   const { taskId } = useParams();
@@ -20,7 +28,7 @@ function TaskUpdate() {
       setTask(response.data);
     }
     handleGetTaskDetail();
-}, [taskId]);
+  }, [taskId]);
 
   function handleTitleChange(event) {
     setTitle(event.target.value);
@@ -28,10 +36,6 @@ function TaskUpdate() {
 
   function handleDescriptionChange(event) {
     setDescription(event.target.value);
-  }
-
-  function handleStepsChange(event) {
-    setSteps(event.target.value);
   }
 
   function handleImageChange(event) {
@@ -44,7 +48,6 @@ function TaskUpdate() {
 
   async function handleSubmitForm(event) {
     event.preventDefault();
-    console.log({ title, description, steps, deadline });
 
     //1. Upload the image through the backend
 
@@ -58,7 +61,6 @@ function TaskUpdate() {
     await updateTask({
       title,
       description,
-      steps,
       deadline,
       imageUrl: response.data.fileUrl,
     });
@@ -68,31 +70,34 @@ function TaskUpdate() {
   }
 
   return (
-    <>
-      <form onSubmit={handleSubmitForm}>
-        <label htmlFor="title">Title</label>
-        <input id="title" type="text" onChange={handleTitleChange} />
-        <label htmlFor="description">Description</label>
-        <input
+    <Center>
+      <FormControl as={GridItem} colSpan={[6, 3]} maxW={600} mt={150}>
+        <Heading mb="8" size="md">
+          Update The Task Details
+        </Heading>
+        <FormLabel htmlFor="title">Title</FormLabel>
+        <Input id="title" type="text" onChange={handleTitleChange} />
+        <FormLabel htmlFor="description">Description</FormLabel>
+        <Input
           id="description"
           type="text"
           onChange={handleDescriptionChange}
         />
-        <label htmlFor="steps">Steps</label>
-        <input id="steps" type="text" onChange={handleStepsChange} />
-        <label htmlFor="image">Image</label>
+        <FormLabel htmlFor="image">Image</FormLabel>
         <input
           id="image"
           name="filename"
           type="file"
           onChange={handleImageChange}
         />
-        <label htmlFor="deadline">Deadline</label>
-        <input id="deadline" type="date" onChange={handleDeadlineChange} />
+        <FormLabel htmlFor="deadline">Deadline</FormLabel>
+        <Input id="deadline" type="date" onChange={handleDeadlineChange} />
 
-        <button type="submit">Update Task</button>
-      </form>
-    </>
+        <Button mt="6" type="submit" onClick={handleSubmitForm}>
+          Update Task
+        </Button>
+      </FormControl>
+    </Center>
   );
 }
 

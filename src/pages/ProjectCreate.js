@@ -8,6 +8,7 @@ import {
   FormControl,
   FormLabel,
   GridItem,
+  Heading,
   Input,
 } from "@chakra-ui/react";
 import { uploadImage } from "../api";
@@ -53,6 +54,9 @@ function ProjectCreate() {
     <>
       <Center>
         <FormControl as={GridItem} colSpan={[6, 3]} maxW={600} mt={150}>
+          <Heading mb="8" size="md">
+            Create a New Project
+          </Heading>
           <FormLabel htmlFor="title">Title</FormLabel>
           <Input id="title" type="text" onChange={handleTitleChange} />
           <FormLabel htmlFor="description">Description</FormLabel>

@@ -5,6 +5,7 @@ import {
   FormControl,
   FormLabel,
   GridItem,
+  Heading,
   Input,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
@@ -70,32 +71,36 @@ function TaskCreate() {
     <>
       <Center>
         <FormControl as={GridItem} colSpan={[6, 3]} maxW={600} mt={150}>
-            <FormLabel htmlFor="title">Title</FormLabel>
-            <Input
-              maxW="60vw"
-              id="title"
-              type="text"
-              onChange={handleTitleChange}
-            />
+          <Heading mb="8" size="md">
+            Create a New Project
+          </Heading>
 
-            <FormLabel htmlFor="description">Description</FormLabel>
-            <Input
-              id="description"
-              type="text"
-              onChange={handleDescriptionChange}
-            />
-            <FormLabel htmlFor="deadline">Deadline</FormLabel>
-            <Input id="deadline" type="date" onChange={handleDeadlineChange} />
-            <FormLabel htmlFor="image">Image</FormLabel>
-            <input
-              id="image"
-              name="filename"
-              type="file"
-              onChange={handleImageChange}
-            />
-            <Button type="submit" onClick={handleSubmitForm}>
-              Create Task
-            </Button>
+          <FormLabel htmlFor="title">Title</FormLabel>
+          <Input
+            maxW="60vw"
+            id="title"
+            type="text"
+            onChange={handleTitleChange}
+          />
+
+          <FormLabel htmlFor="description">Description</FormLabel>
+          <Input
+            id="description"
+            type="text"
+            onChange={handleDescriptionChange}
+          />
+          <FormLabel htmlFor="deadline">Deadline</FormLabel>
+          <Input id="deadline" type="date" onChange={handleDeadlineChange} />
+          <FormLabel htmlFor="image">Image</FormLabel>
+          <input
+            id="image"
+            name="filename"
+            type="file"
+            onChange={handleImageChange}
+          />
+          <Button type="submit" onClick={handleSubmitForm}>
+            Create Task
+          </Button>
         </FormControl>
       </Center>
     </>

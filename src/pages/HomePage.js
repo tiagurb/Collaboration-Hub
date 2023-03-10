@@ -159,7 +159,7 @@ function HomePage() {
               <Link to="/signup">Sign up now</Link>
             </Button>
             <Button variant={"link"} colorScheme={"blue"} size={"sm"}>
-              Learn more
+              <Link to="/guide">Learn more</Link>
             </Button>
             <Box>
               <Icon

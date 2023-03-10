@@ -3,24 +3,23 @@ import {
   Button,
   Card,
   CardBody,
-  CardHeader,
   Center,
   FormControl,
   FormLabel,
   GridItem,
   Heading,
-  Image,
   Text,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router";
-import { getTask, deleteTask, updateTaskStatus } from "../api";
-import TaskCreate from "./TaskCreate";
-import { updateTask } from "../api";
+import { redirect, useNavigate, useParams } from "react-router";
+import { getTask, deleteTask, updateTaskStatus, getProject } from "../api";
+import { toast } from "react-toastify";
 
 function TaskDetail() {
   const [task, setTask] = useState();
-  const { taskId } = useParams();
+  const [project, setProject] = useState();
+  const { projectId, taskId } = useParams();
+
   const navigate = useNavigate();
   const [status, setStatus] = useState("");
 
@@ -51,11 +50,11 @@ function TaskDetail() {
     const updatedTask = { ...task, status }; // create a new task object with updated status
     await updateTaskStatus(updatedTask._id, updatedTask); // call the updateTask API function with the updated task
     setTask(updatedTask); // update the task state with the updated task object
-    navigate("/dashboard");
+    toast.success("Task updated");
+    await getProject(projectId);
+    navigate(`/project/${project._id}`);
   }
-  //--------------------------------
-  //update status does not work
-  //----------------------------------
+
   return task ? (
     <Center>
       <Card width="50vw">

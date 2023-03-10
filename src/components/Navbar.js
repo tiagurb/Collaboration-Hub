@@ -1,4 +1,4 @@
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { UserContext } from "../context/user.context";
 import { useContext } from "react";
 import React, { ReactNode } from "react";
@@ -19,27 +19,20 @@ import {
   useDisclosure,
   Menu,
   MenuButton,
-  MenuDivider,
   MenuItem,
   MenuList,
 } from "@chakra-ui/react";
 import {
   FiHome,
-  FiTrendingUp,
-  FiCompass,
-  FiStar,
-  FiSettings,
   FiMenu,
-  FiBell,
   FiChevronDown,
 } from "react-icons/fi";
 import HomeNavBar from "./HomeNavBar";
-import { AddIcon, SmallAddIcon } from "@chakra-ui/icons";
+import { AddIcon } from "@chakra-ui/icons";
 
 const LinkItems = [
   { name: "Dashboard", icon: FiHome, path: "/dashboard" },
   { name: "Create a Project", icon: AddIcon, path: "/project/create" },
-  { name: "User information", icon: FiSettings, path: "/settings" },
 ];
 
 export default function Navbar({ children }) {
@@ -53,7 +46,6 @@ export default function Navbar({ children }) {
     location.pathname === "/guide" ||
     location.pathname === "/joao" ||
     location.pathname === "/tiago";
-  console.log(location);
   return (
     <>
       {loggedUser && !hideSideBar ? (
@@ -184,12 +176,6 @@ const MobileNav = ({ onOpen, ...rest }) => {
       />
 
       <HStack spacing={{ base: "0", md: "6" }}>
-        <IconButton
-          size="lg"
-          variant="ghost"
-          aria-label="open menu"
-          icon={<FiBell />}
-        />
         <Flex alignItems={"center"}>
           <Menu>
             <MenuButton

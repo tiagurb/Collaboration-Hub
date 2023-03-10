@@ -59,7 +59,7 @@ function ProjectDetail() {
           <SimpleGrid
             spacing={4}
             templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
-            columns={1}
+            columns={1} mt={50}
           >
             {project.tasks.map((task) => {
               return (
@@ -105,7 +105,7 @@ function ProjectDetail() {
           <SimpleGrid
             spacing={4}
             templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
-            columns={1}
+            columns={1} mt={50}
           >
             {project.tasks.map((task) => {
               return (
@@ -143,7 +143,7 @@ function ProjectDetail() {
           <SimpleGrid
             spacing={4}
             templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
-            columns={1}
+            columns={1} mt={50}
           >
             {project.tasks.map((task) => {
               return (

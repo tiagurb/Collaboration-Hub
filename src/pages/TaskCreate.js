@@ -60,7 +60,7 @@ function TaskCreate() {
       <Center>
         <FormControl as={GridItem} colSpan={[6, 3]} maxW={600} mt={150}>
           <Heading mb="8" size="md">
-            Create a New Project
+            Create a New Task
           </Heading>
 
           <FormLabel htmlFor="title">Title</FormLabel>

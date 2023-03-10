@@ -1,7 +1,6 @@
 import {
   Box,
   Center,
-  Flex,
   Heading,
   HStack,
   Img,
@@ -10,11 +9,9 @@ import {
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getAllProjects } from "../api";
-import { BsArrowUpRight } from "react-icons/bs";
 
 function ListProjects() {
   const [projects, setProjects] = useState([]);
-  // const [user, setUser] = useState([]);
 
   useEffect(() => {
     async function handleGetAllProjects() {
@@ -50,10 +47,6 @@ function ListProjects() {
                   bg="white"
                   border={"1px"}
                   borderColor="black"
-                  // boxShadow={useColorModeValue(
-                  //   "6px 6px 0 black",
-                  //   "6px 6px 0 cyan"
-                  // )}
                 >
                   <Box h={"200px"} borderBottom={"1px"} borderColor="black">
                     <Img

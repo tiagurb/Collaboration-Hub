@@ -19,7 +19,6 @@ import { Heading, Highlight } from "@chakra-ui/layout";
 
 function ProjectDetail() {
   const [project, setProject] = useState(null);
-  // const [task, setTask] = useState([]);
   const { projectId } = useParams();
   const navigate = useNavigate();
 

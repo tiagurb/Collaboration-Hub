@@ -35,7 +35,6 @@ function ProjectCreate() {
     const uploadData = new FormData();
     uploadData.append("filename", image);
     const response = await uploadImage(uploadData);
-    console.log(response.data.fileUrl);
     await createProject({
       title,
       description,

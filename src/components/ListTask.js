@@ -4,7 +4,6 @@ import { getAllTasks } from "../api";
 
 function ListTask() {
   const [tasks, setTasks] = useState([]);
-  // const [user, setUser] = useState([]);
 
   useEffect(() => {
     async function handleGetAllTasks() {

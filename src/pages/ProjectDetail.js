@@ -58,7 +58,8 @@ function ProjectDetail() {
           <SimpleGrid
             spacing={4}
             templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
-            columns={1} mt={50}
+            columns={1}
+            mt={50}
           >
             {project.tasks.map((task) => {
               return (
@@ -104,12 +105,21 @@ function ProjectDetail() {
           <SimpleGrid
             spacing={4}
             templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
-            columns={1} mt={50}
+            columns={1}
+            mt={50}
           >
             {project.tasks.map((task) => {
               return (
                 task.status === "working" && (
-                  <Card align="center">
+                  <Card
+                    align="center"
+                    styles={{ backgroundColor: "#FFFFFF" }}
+                    _hover={{
+                      boxShadow:
+                        ("0 4px 6px rgba(160, 174, 192, 0.6)",
+                        "0 4px 6px rgba(9, 17, 28, 0.4)"),
+                    }}
+                  >
                     <CardHeader>
                       <Heading size="md"> {task.title} </Heading>
                     </CardHeader>
@@ -142,13 +152,22 @@ function ProjectDetail() {
           <SimpleGrid
             spacing={4}
             templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
-            columns={1} mt={50}
+            columns={1}
+            mt={50}
           >
             {project.tasks.map((task) => {
               return (
                 task.status === "complete" && (
                   <Box>
-                    <Card align="center">
+                    <Card
+                      align="center"
+                      styles={{ backgroundColor: "#FFFFFF" }}
+                      _hover={{
+                        boxShadow:
+                          ("0 4px 6px rgba(160, 174, 192, 0.6)",
+                          "0 4px 6px rgba(9, 17, 28, 0.4)"),
+                      }}
+                    >
                       <CardHeader>
                         <Heading size="md"> {task.title} </Heading>
                       </CardHeader>

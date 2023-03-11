@@ -42,7 +42,13 @@ function ProjectDetail() {
 
   return project ? (
     <Box ml={[null, null, 300, 300]}>
-      <Heading size="lg" fontSize="50px" mb="10">
+      <Heading
+        size="lg"
+        fontSize="50px"
+        mb="10"
+        bgClip="text"
+        bgGradient="linear(to-l, #2892C6, #C23156)"
+      >
         {project.title}
       </Heading>
       <SimpleGrid columns={[1, null, 3]} spacing="40px">

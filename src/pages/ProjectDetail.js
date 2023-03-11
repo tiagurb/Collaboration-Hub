@@ -16,6 +16,7 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { Heading, Highlight } from "@chakra-ui/layout";
+import { BsTrash3 } from "react-icons/bs";
 
 function ProjectDetail() {
   const [project, setProject] = useState(null);
@@ -200,7 +201,13 @@ function ProjectDetail() {
         <Button onClick={handleCreateTask}>Create a new Task</Button>
       </div>
       <div>
-        <Button onClick={handleDeleteProject}>Delete Project</Button>
+        <Button
+          colorScheme="red"
+          leftIcon={<BsTrash3 />}
+          onClick={handleDeleteProject}
+        >
+          Delete Project
+        </Button>
       </div>
     </Box>
   ) : (

@@ -305,7 +305,7 @@ function HomePage() {
                 src={
                   "https://res.cloudinary.com/dq8v89bym/image/upload/v1677789930/image_2_gditgb.png"
                 }
-                name={"Francisco Duarte"}
+                name={"Xico Duarte"}
                 title={"CEO at Ouriço"}
               />
             </Testimonial>

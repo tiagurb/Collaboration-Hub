@@ -203,6 +203,7 @@ function ProjectDetail() {
       <div>
         <Button
           colorScheme="red"
+          mt={20}
           leftIcon={<BsTrash3 />}
           onClick={handleDeleteProject}
         >
